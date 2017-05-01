@@ -23,7 +23,7 @@
 
 %Measuring Stellar Rotation with K2
 
-\title{Scientific/Technical/Management}
+\title{\vspace{-0.5in}Scientific/Technical/Management}
 \date{}
 
 \maketitle
@@ -35,38 +35,54 @@
 %%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-Galactic archaeology and exoplanet populations are two rapidly accelerating
-fields of interest within astronomy.
-Although seemingly unconnected, these two fields are linked by a mutual
-requirement for precise stellar parameters.
-To galactic archaeologists, elemental abundances and ages are the most
-important parameters.
-Indeed, most galactic archaeology surveys target exactly these properties.
-For exoplaneteers, masses and radii are arguably the two most important
-stellar parameters for understanding planetary systems, however with the
-growing number of planets with precise masses and radii, attention is turning
-toward other parameters like abundances and ages.
-Age is a fundamental stellar parameter of great interest to two large
-communities of astronomers, however it is a difficult property to measure for
-main sequence F, G and K stars in the field.
-This is in part because low-mass dwarfs do not move far on the Color-Magnitude
-diagram (CMD) during their hydrogen burning lifetimes and in part because
-different stellar models predict different ages for the same star.
-Asteroseismology, while a very precise age-dating tool, is not capable of
-producing the large quantity of ages needed for exoplanet and galactic
-population studies.
-Of all the readily available stellar properties, rotation periods may contain
-the most information about the age of a star.
+%% uhoh, i was about to send up an entire introduction... maybe we should coordinate more about writing sections! :)
 
-kepler makes this possible, get rotation. with K2, new opportunity to do this
-for range of stellar ages, possibly more than doubling the sample of stars
-available. K2 also presents unique challenges in data systematics, and shorter
-baseline means some periods not available... thus we need to use new tools to
-measure rotation
+%Galactic archaeology and exoplanet populations are two rapidly accelerating
+%fields of interest within astronomy.
+%Although seemingly unconnected, these two fields are linked by a mutual
+%requirement for precise stellar parameters.
+%To galactic archaeologists, elemental abundances and ages are the most
+%important parameters.
+%Indeed, most galactic archaeology surveys target exactly these properties.
+%For exoplaneteers, masses and radii are arguably the two most important
+%stellar parameters for understanding planetary systems, however with the
+%growing number of planets with precise masses and radii, attention is turning
+%toward other parameters like abundances and ages.
+%Age is a fundamental stellar parameter of great interest to two large
+%communities of astronomers, however it is a difficult property to measure for
+%main sequence F, G and K stars in the field.
+%This is in part because low-mass dwarfs do not move far on the Color-Magnitude
+%diagram (CMD) during their hydrogen burning lifetimes and in part because
+%different stellar models predict different ages for the same star.
+%Asteroseismology, while a very precise age-dating tool, is not capable of
+%producing the large quantity of ages needed for exoplanet and galactic
+%population studies.
+%Of all the readily available stellar properties, rotation periods may contain
+%the most information about the age of a star.
 
-we propose to measure rotation periods for all light curves from k2. this will produce a value-added dataset for the K2 mission, and extend the science yield from Kepler.
 
-(fill 1st page w/ intro, incl. bold statements of highest level goals)
+
+
+Among the key observational properties of main sequence stars in our galaxy, age is the most difficult to determine. Traditionally, fitting isochrones to cluster stars was one of the only precise methods for measuring ages, and was impossible for the majority of isolated field stars. Methods such as asteroseismology and measuring Li abundances require time intensive observations for each target and are not capable of producing the large quantity of ages needed for exoplanet and galactic population studies. To improve our understanding of star and planet formation and evolution, as well as the history of the Milky Way, we must be able to constrain the ages of low-mass stars like the Sun in the galactic field.
+
+Fortunately nature has provided a power means to determine ages for main sequence stars via their rotation. Angular momentum is carried away though magnetically driven stellar winds, which slows the star's rotation over cosmic time. This rotation-based ``clock'' is known as {\it gyrochronology}. Cool spots on the star's surface rotate in-to and out-of view, creating small amplitude ($\sim$1\%) quasi-periodic changes in the stellar brightness. While rotation periods have previously been laboriously measured from starspot-induced flux modulations for hundreds of stars, space-based photometric surveys have opened the door to homogeneous ensemble measures of stellar rotation, and therefore age.
+{\bf With the precise, long-duration light curves available from the \Kepler/K2 mission, we can determine the rotation periods and ages for nearly 100,000 main sequence field stars.}
+%Stellar rotation periods are are the most promising tool for constraining the ages of field stars.
+
+The \Kepler mission broke new ground by producing rotation periods for tens-of-thousands of field stars within a single $\sim$110 sq deg field of view, and discovered a surprising bimodal distribution of rotation periods. Two competing explanations have arisen for this mysterious feature: a bimodal age distribution for nearby stars, or a new subtlety in the angular-momentum-loss mechanism. Detailed calibrations of gyrochronology models with the \Kepler rotation sample also revealed the need for samples of stars with a wider range of ages and compositions. Fortunately the ongoing \Kepler extended mission, K2, has currently produced light curves from 14 additional fields throughout the Galaxy.
+
+To enable studies of stellar ages from rotation periods with K2, we propose to:
+
+1. Measure accurate rotation periods for every available K2 target, using new statistical methods we have developed to cope with significant instrumental systematics in the K2 data. This value-added dataset will improve the \Kepler data legacy for field stars, and provide a critical training set for the TESS mission. 
+
+2. Produce updated gyrochronology relations based on a wider range of field star ages, and additional open clusters within the K2 fields.
+
+3. Determine the origin of the mysterious rotation period bimodality discoverd with \Kepler by tracing the rotation period distribution in each K2 field, and out to further distances utilizing public Gaia data.
+
+4. Measure the star formation history within each K2 field using a new Bayesian age-dating system.
+
+
+
 \clearpage
 
 
