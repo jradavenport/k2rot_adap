@@ -18,6 +18,10 @@
 % make the word Kepler italicized
 \newcommand{\Kepler}{\textsl{Kepler}\xspace}
 
+% fuzzy math
+\def\lesssim{\mathrel{\hbox{\rlap{\hbox{\lower3pt\hbox{$\sim$}}}\hbox{\raise2pt\hbox{$<$}}}}}
+\def\gtrsim{\mathrel{\hbox{\rlap{\hbox{\lower3pt\hbox{$\sim$}}}\hbox{\raise2pt\hbox{$>$}}}}}
+
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%
 
@@ -89,6 +93,28 @@ the most information about stellar age, and provide the best leverage for advanc
 
 
 
+%%%%%%%%%
+\subsection{Age-Dating Field Stars with Rotation}
+The seminal work of \citet{skumanich1972} laid the foundation for our model of the stellar age--rotation--activity relationship. When stars settle onto the main sequence they may have a range of initial rotation periods based on the angular momentum available in their primordial environment. However, rotation velocities converge by a few 100 Myr (for Solar-type stars), and then follow a standard spin-down evolution \citep{barnes2010}. Stars continuously lose angular momentum due to magnetically driven winds. Stellar rotation also drives the internal magnetic dynamo, resulting in decreasing surface magnetic activity as the star slows (rotation period increases). Older, slower rotating stars therefore have smaller starspots, making the detection rotation more difficult as stars age. Deriving ages for field stars therefore requires knowing their color (as a proxy for stellar temperature or mass) and their surface rotation period \citep{barnes2007}, and can produce ages with errors as low as $\sim$10\% \citep{barnes2010}.
+
+The rate of this angular momentum loss has historically been calibrated using main sequence stars at a range of masses in stellar clusters with known ages, leading to a useful clock called ``gyrochronology'' \citep{barnes2003}. Several gyrochronology model (or gyrochrones) parameterizations exist, each using various age benchmarks for calibration. Nearly all gyrochronology models suffer from lack of constraint at older ages; often the Sun is the only benchmark used older than $\sim$1 Gyr since accessible nearby open clusters are typically young ($<600$ Myr). 
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=4in]{angus2015_fig6.png}
+\caption{Figure 6 from \citet{angus2015}, showing an improved gyrochronology relation calibrated using \Kepler asteroseismic targets (black dots) and the Sun (red dot), compared with other standard gyrochronology models (blue dashed and dotted lines).}
+\label{fig:gyro}
+\end{figure}
+
+
+In Figure \ref{fig:gyro} we demonstrate the subtle differences between competing gyrochronology models for Solar mass stars. To increase the available sample of calibration sources available at Gyr ages, Co-I Angus has produced improved gyrochronology models using \Kepler asteroseismic targets \citep{angus2015}. Note: the additional calibration sources at Solar ages means the Angus model is not forced to exactly fit the Sun's rotation period, as other traditional models do. Unfortunately, asteroseismology cannot yet provide ages for stars with masses much lower than the Sun.  \Kepler rotation period samples have demonstrated that magnetic braking may become less efficient at older ages \citep{van-saders2016}.
+The \citet{angus2015} gyrochronology study also found that cluster and asterosismic field star targets may not follow the same spin-down model, possibly indicating bias in the dynamical histories of these samples.  Additional calibration sources are desperately needed for stars older than the Sun, and for lower-mass dwarfs.
+
+
+
+
+
+
 
 %%%%%%%%%
 \subsection{Rotation Periods from \Kepler and K2}
@@ -103,27 +129,8 @@ After hardware failures made observations of the original field impossible, an e
 
 
 
-
-
-%%%%%%%%%
-\subsection{Age-Dating Field Stars with Rotation}
-The seminal work of \citet{skumanich1972} laid the foundation for our model of the stellar age--rotation--activity relationship. When stars settle onto the main sequence they may have a range of initial rotation periods based on the angular momentum available in their primordial environment. However, rotation velocities converge by a few 100 Myr (for Solar-type stars), and then follow a standard spin-down evolution \citep{barnes2010}. Stars continuously lose angular momentum due to magnetically driven winds. Stellar rotation also drives the internal magnetic dynamo, resulting in decreasing surface magnetic activity as the star slows (rotation period increases). Older, slower rotating stars therefore have smaller starspots, making the detection rotation more difficult as stars age. Deriving ages for field stars therefore requires knowing their color (as a proxy for stellar temperature or mass) and their surface rotation period \citep{barnes2007}, and can produce ages with errors as low as $\sim$10\% \citep{barnes2010}.
-
-The rate of this angular momentum loss has historically been calibrated using main sequence stars at a range of masses in stellar clusters with known ages, leading to a useful clock called ``gyrochronology'' \citep{barnes2003}. Several gyrochronology model (or gyrochrones) parameterizations exist, each using various age benchmarks for calibration. Nearly all gyrochronology models suffer from lack of constraint at older ages; often the Sun is the only benchmark used older than $\sim$1 Gyr since accessible nearby open clusters are typically young ($<600$ Myr). In Figure \ref{fig:gyro} we demonstrate the subtle differences between competing gyrochronology models. To increase the available sample of calibration sources available at Gyr ages, Co-I Angus has produced imrpoved gyrochronology models using \Kepler asteroseismic targets \citep{angus2015}. \Kepler rotation period samples have demonstrated, however, that additional calibration sources are desperately needed at ages older than the Sun \citep{van-saders2016}.
-
-
-\begin{figure}[!th]
-\centering
-\includegraphics[width=4in]{angus2015_fig6.png}
-\caption{Figure 6 from \citet{angus2015}, showing an improved gyrochronology relation calibrated using \Kepler asteroseismic targets (black dots) and the Sun (red dot), compared with other standard gyrochronology models (blue dashed and dotted lines). Note: the additional calibration sources at Solar ages means the Angus model is not forced to exactly fit the Sun's rotation period, as other traditional models do.
-}
-\label{fig:gyro}
-\end{figure}
-
-
-K2 provides the ideal dataset to both extend the \Kepler studies of field star age distributions, and to amass a sample of better calibration sources for gyrochronology models. The
-%the promise of gyrochronology is key, has ability to get ages with accuracy that rivals any other method (10\%). with Kepler/K2 is a mass production job, but with K2 new challenges in the data are lurking
-
+K2 provides the ideal dataset to both extend the \Kepler studies of field star age distributions, and to amass a sample of better calibration sources for gyrochronology models. The range of K2 fields positions within the Galaxy means the sample spans a much wider variety of stellar ages for more distant stars ($\gtrsim$1pc), and provides multiple opportunities to constrain the local star formation history for nearby stars. This makes the gyrochronology study of field stars with K2 an unique and valuable comparison to complimentary efforts in studying galactic archeology using chemical abundances, such as with APOGEE \citep{hayden2014}.
+Producing rotation periods for these older stars, and the additional open clusters including the benchmark Solar age M67 available in the K2 data, will also lead to new gyrochronology relations, and to test the universality of the age--rotation--activity relation put into question by \citet{angus2015}.
 
 
 
