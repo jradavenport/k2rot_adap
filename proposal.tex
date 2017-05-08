@@ -140,9 +140,8 @@ Producing rotation periods for these older stars, and the additional open cluste
 %%%%%%%%%
 \subsection{A Mysterious Period Bimodality}
 
-Then this weird thing appeared, which is an open mystery - a bimodal period distribution - whoa \citep{mcquillan2013}. this was then extended to higher masses by \citet{davenport2017}. Explanations are either a break from single spin-down law (possibly from different initial periods, or some new physics maybe due to chemical abundances) or represents an age bimodality of local stars.
+One of the most remarkable results from the \Kepler rotation period catalog was the discovery of a bimodal period distribution among field stars by \citet{mcquillan2013}, and is shown in Figure \ref{fig:bimodal}a. While a separate sequence of rapid of rotation periods had been known in young stellar clusters due to lower-mass stars settling on to the angular momentum main sequence slower \citep[e.g.][]{barnes2007}, this new bimodality was detected from M dwarfs ($T_{eff}\lesssim4000$), and separated stars at a period of $\sim$20 days. Follow-up analysis by \citet{mcquillan2014} found the period bimodality extended to include K dwarfs. {\bf Recently, PI Davenport discovered this period bimodality extends throughout all masses in the \Kepler rotation sample, as shown in Figure \ref{fig:bimodal}b \citep{davenport2017}.} %By combining the \Kepler catalog with distance measurements from Gaia DR1 \citep{gaia_dr1}, contamination from subgiants 
 
- Since this effect is seen only within 300pc so far (and only within Kepler data) due to sample properties, cannot be sure what spatial or compositional dependence this has, need a sample that spans a wider spatial area and more ages of stars
 
 \begin{figure}[!th]
 \centering
@@ -159,6 +158,19 @@ Right -- Figure 3 from \citet{davenport2017}, showing all \Kepler rotation perio
 
 
 
+Explanations are either a break from single spin-down law (possibly from different initial periods, or some new physics maybe due to chemical abundances) or represents an age bimodality of local stars.
+
+
+other efforts to reproduce SFH in solar neighborhood do show variation of SFH,
+color-magnitude diagram inversion of the field gives peak of SFH around 3Gyr ago, with slow variations over several Gyr \citep{cignoni2006}. CMD studies from Hipparcos by \citet{hernandez2000} have also suggested a shorter timescale variation of $\sim$0.5 Gyr.
+white dwarf cooling ages (cosmochronology) shows the past few Gyr has been higher SFR, but too small of sample, only get age resolution of $\sim$1 Gyr \citep{tremblay2014}
+
+
+ Since this effect is seen only within 300pc so far (and only within Kepler data) due to sample properties, cannot be sure what spatial or compositional dependence this has, need a sample that spans a wider spatial area and more ages of stars
+
+
+
+
 %%%%%%%%%%%%%%%%%%%
 \section{Proposed Research}
 %%%%%%%%%
@@ -167,11 +179,14 @@ We propose the first systematic study of stellar rotation periods from the K2
 data.
 
 This will include $\sim$XXXXX stars from Campaigns 0-16.
-This includes data for multiple stellar clusters that were taken as part of
-the Guest Observer program.
-\racomment{I'm not sure we want to get into measuring rotation periods for
-stars in the cluster superstamps. Besides, there are other people working on
-this. I think we should stick to the regular K2 targets.}
+%This includes data for multiple stellar clusters that were taken as part of
+%the Guest Observer program.
+%\racomment{
+%I'm not sure we want to get into measuring rotation periods for
+%stars in the cluster superstamps. Besides, there are other people working on
+%this. I think we should stick to the regular K2 targets.
+%}
+%JRAD: I totally agree
 
 Part of our study will be to assess the qualities of the various data
 reduction pipelines available for K2 light curves.
@@ -179,8 +194,8 @@ Each detrending algorithm uses a slightly different approach and will almost
 certainly provide light curves that differ enough to produce a number of
 discrepant rotation periods.
 We will compare the performance of three pipelines in particular: the
-\citet{Vanderburg2015}, lightcurves, the {\tt everest} \citet{Luger2016} light
-curves and the \ktwosc\ \citet{Aigrain2016} light curves.
+\citet{Vanderburg2015}, light curves, the {\tt everest} \citet{luger2016} light
+curves and the \ktwosc\ \citet{aigrain2016} light curves.
 By visually examining the light curves and Lomb-Scargle periodograms of a
 number of targets in common between the detrending methods, we will ascertain
 which pipeline best preserves signal on long timescales.
@@ -188,7 +203,7 @@ which pipeline best preserves signal on long timescales.
 % approach: a Gaussian process is used to model the instrumental systematics,
 % astrophysical variability and white noise in each light curve.
 All three of these pipelines are optimized for planet search, however the
-\citet{Aigrain2016} light curves are designed to preserve stellar variability
+\citet{aigrain2016} light curves are designed to preserve stellar variability
 as much as possible.
 We expect to find that these light curves preserve rotation signals on the
 longest timescales.
@@ -196,8 +211,8 @@ Once establishing the best detrending method for preserving stellar
 variability, we will download all the available light curves and, if
 necessary, run the pipeline on any outstanding targets.
 We will also produce and examine periodograms using the
-systematics-insensitive periodogram (SIP) \citep{Angus2015}.
-This method simulataneously fits light curves with a sinusoid and a noise
+systematics-insensitive periodogram (SIP) \citep{angus2015}.
+This method simultaneously fits light curves with a sinusoid and a noise
 model constructed from 150 principle components derived from a PCA of the
 entire set of \ktwo\ light curves for a given campaign.
 Although developed for asteroseismology, this algorithm may also be applicable
@@ -214,14 +229,15 @@ We will then apply a procedure for obtaining more accurate and precise
 rotation periods using probabilistic inference.
 Co-I Angus recently developed a method for rotation period inference using a
 Gaussian Process (GP) to model the light curve in the time-domain, rather than
-extracting periodic signals in the frequency domain \citet{Angus2017}.
+extracting periodic signals in the frequency domain \citet{angus2016c}. 
+% Is this IAU reference correct, or do you have a paper?%\citet{Angus2017}.
 This GP method produces slightly more precise and accurate rotation periods
 with more representative uncertainties than Lomb-Scargle and autocorrelation
 methods.
 The disadvantage of this GP regression based method is that it can be
 computationally expensive.
 However, with the recently developed method for fast Gaussian process
-inference, {\tt celerite} \citep{Foreman-Mackey2017}, even performing MCMC
+inference, {\tt celerite} \citep{foreman-mackey2017}, even performing MCMC
 with the thousands of data points in a \ktwo\ light curve may only take a few
 minutes.
 The advantage of computing probabilistic rotation periods is that one can
@@ -232,7 +248,7 @@ This may be a level of sophistication that is above and beyond our science
 goals but it is worth noting that we could take this approach if the data and
 scientific question warranted it.
 
-Wherever possible we will mask out discontinous astrophysical signals, such as
+Wherever possible we will mask out discontinuous astrophysical signals, such as
 eclipsing binaries, planet transit or flares that may distort the rotation
 period signal.
 We will make use of exoplanet and binary catalogs to identify planet transits
@@ -280,6 +296,8 @@ the big goal here is to decide which explanation is correct!
 \label{fig:cmd}
 \end{figure}
 
+data from the Gaia mission \citep{perryman2001}
+gaia DR1 \citep{gaia_dr1}
 
 
 

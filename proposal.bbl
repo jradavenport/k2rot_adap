@@ -1,0 +1,174 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{{Aigrain} {et~al.}(2016){Aigrain}, {Parviainen}, \&
+  {Pope}}]{aigrain2016}
+{Aigrain}, S., {Parviainen}, H., \& {Pope}, B.~J.~S. 2016, \mnras, 459, 2408
+
+\bibitem[{{Aigrain} {et~al.}(2015){Aigrain}, {Llama}, {Ceillier}, {Chagas},
+  {Davenport}, {Garc{\'{\i}}a}, {Hay}, {Lanza}, {McQuillan}, {Mazeh}, {de
+  Medeiros}, {Nielsen}, \& {Reinhold}}]{aigrain2015}
+{Aigrain}, S., {Llama}, J., {Ceillier}, T., {et~al.} 2015, \mnras, 450, 3211
+
+\bibitem[{{Angus} {et~al.}(2016{\natexlab{a}}){Angus}, {Aigrain}, \&
+  {Foreman-Mackey}}]{angus2016c}
+{Angus}, R., {Aigrain}, S., \& {Foreman-Mackey}, D. 2016{\natexlab{a}}, IAU
+  Focus Meeting, 29, 191
+
+\bibitem[{{Angus} {et~al.}(2015){Angus}, {Aigrain}, {Foreman-Mackey}, \&
+  {McQuillan}}]{angus2015}
+{Angus}, R., {Aigrain}, S., {Foreman-Mackey}, D., \& {McQuillan}, A. 2015,
+  \mnras, 450, 1787
+
+\bibitem[{{Angus} {et~al.}(2016{\natexlab{b}}){Angus}, {Foreman-Mackey}, \&
+  {Johnson}}]{angus2016}
+{Angus}, R., {Foreman-Mackey}, D., \& {Johnson}, J.~A. 2016{\natexlab{b}},
+  \apj, 818, 109
+
+\bibitem[{{Barnes}(2003)}]{barnes2003}
+{Barnes}, S.~A. 2003, \apj, 586, 464
+
+\bibitem[{{Barnes}(2007)}]{barnes2007}
+---. 2007, \apj, 669, 1167
+
+\bibitem[{{Barnes}(2010)}]{barnes2010}
+---. 2010, \apj, 722, 222
+
+\bibitem[{{Borucki} {et~al.}(2010){Borucki}, {Koch}, {Basri}, {Batalha},
+  {Brown}, {Caldwell}, {Caldwell}, {Christensen-Dalsgaard}, {Cochran},
+  {DeVore}, {Dunham}, {Dupree}, {Gautier}, {Geary}, {Gilliland}, {Gould},
+  {Howell}, {Jenkins}, {Kondo}, {Latham}, {Marcy}, {Meibom}, {Kjeldsen},
+  {Lissauer}, {Monet}, {Morrison}, {Sasselov}, {Tarter}, {Boss}, {Brownlee},
+  {Owen}, {Buzasi}, {Charbonneau}, {Doyle}, {Fortney}, {Ford}, {Holman},
+  {Seager}, {Steffen}, {Welsh}, {Rowe}, {Anderson}, {Buchhave}, {Ciardi},
+  {Walkowicz}, {Sherry}, {Horch}, {Isaacson}, {Everett}, {Fischer}, {Torres},
+  {Johnson}, {Endl}, {MacQueen}, {Bryson}, {Dotson}, {Haas}, {Kolodziejczak},
+  {Van Cleve}, {Chandrasekaran}, {Twicken}, {Quintana}, {Clarke}, {Allen},
+  {Li}, {Wu}, {Tenenbaum}, {Verner}, {Bruhweiler}, {Barnes}, \&
+  {Prsa}}]{borucki2010}
+{Borucki}, W.~J., {Koch}, D., {Basri}, G., {et~al.} 2010, Science, 327, 977
+
+\bibitem[{{Cignoni} {et~al.}(2006){Cignoni}, {Degl'Innocenti}, {Prada Moroni},
+  \& {Shore}}]{cignoni2006}
+{Cignoni}, M., {Degl'Innocenti}, S., {Prada Moroni}, P.~G., \& {Shore}, S.~N.
+  2006, \aap, 459, 783
+
+\bibitem[{{Collins} \& {Truax}(1995)}]{collins1995}
+{Collins}, II, G.~W., \& {Truax}, R.~J. 1995, \apj, 439, 860
+
+\bibitem[{{Davenport}(2017)}]{davenport2017}
+{Davenport}, J.~R.~A. 2017, \apj, 835, 16
+
+\bibitem[{{Davenport} {et~al.}(2012){Davenport}, {Becker}, {Kowalski},
+  {Hawley}, {Schmidt}, {Hilton}, {Sesar}, \& {Cutri}}]{davenport2012}
+{Davenport}, J.~R.~A., {Becker}, A.~C., {Kowalski}, A.~F., {et~al.} 2012, \apj,
+  748, 58
+
+\bibitem[{{Davenport} {et~al.}(2015){Davenport}, {Ruan}, {Becker}, {Macleod},
+  \& {Cutri}}]{davenport2015a}
+{Davenport}, J.~R.~A., {Ruan}, J.~J., {Becker}, A.~C., {Macleod}, C.~L., \&
+  {Cutri}, R.~M. 2015, \apj, 803, 2
+
+\bibitem[{{Douglas} {et~al.}(2017){Douglas}, {Ag{\"u}eros}, {Covey}, \&
+  {Kraus}}]{douglas2017}
+{Douglas}, S.~T., {Ag{\"u}eros}, M.~A., {Covey}, K.~R., \& {Kraus}, A.~L. 2017,
+  ArXiv e-prints, arXiv:1704.04507
+
+\bibitem[{{Foreman-Mackey} {et~al.}(2017){Foreman-Mackey}, {Agol}, {Angus}, \&
+  {Ambikasaran}}]{foreman-mackey2017}
+{Foreman-Mackey}, D., {Agol}, E., {Angus}, R., \& {Ambikasaran}, S. 2017, ArXiv
+  e-prints, arXiv:1703.09710
+
+\bibitem[{{Hartman} {et~al.}(2010){Hartman}, {Bakos}, {Kov{\'a}cs}, \&
+  {Noyes}}]{hartman2010}
+{Hartman}, J.~D., {Bakos}, G.~{\'A}., {Kov{\'a}cs}, G., \& {Noyes}, R.~W. 2010,
+  ArXiv e-prints, arXiv:1006.0950
+
+\bibitem[{{Hartman} {et~al.}(2011){Hartman}, {Bakos}, {Noyes}, {Sip{\H o}cz},
+  {Kov{\'a}cs}, {Mazeh}, {Shporer}, \& {P{\'a}l}}]{hartman2011}
+{Hartman}, J.~D., {Bakos}, G.~{\'A}., {Noyes}, R.~W., {et~al.} 2011, \aj, 141,
+  166
+
+\bibitem[{{Hayden} {et~al.}(2014){Hayden}, {Holtzman}, {Bovy}, {Majewski},
+  {Johnson}, {Allende Prieto}, {Beers}, {Cunha}, {Frinchaboy}, {Garc{\'{\i}}a
+  P{\'e}rez}, {Girardi}, {Hearty}, {Lee}, {Nidever}, {Schiavon}, {Schlesinger},
+  {Schneider}, {Schultheis}, {Shetrone}, {Smith}, {Zasowski}, {Bizyaev},
+  {Feuillet}, {Hasselquist}, {Kinemuchi}, {Malanushenko}, {Malanushenko},
+  {O'Connell}, {Pan}, \& {Stassun}}]{hayden2014}
+{Hayden}, M.~R., {Holtzman}, J.~A., {Bovy}, J., {et~al.} 2014, \aj, 147, 116
+
+\bibitem[{{Hernandez} {et~al.}(2000){Hernandez}, {Valls-Gabaud}, \&
+  {Gilmore}}]{hernandez2000}
+{Hernandez}, X., {Valls-Gabaud}, D., \& {Gilmore}, G. 2000, \mnras, 316, 605
+
+\bibitem[{{Howell} {et~al.}(2014){Howell}, {Sobeck}, {Haas}, {Still},
+  {Barclay}, {Mullally}, {Troeltzsch}, {Aigrain}, {Bryson}, {Caldwell},
+  {Chaplin}, {Cochran}, {Huber}, {Marcy}, {Miglio}, {Najita}, {Smith},
+  {Twicken}, \& {Fortney}}]{howell2014}
+{Howell}, S.~B., {Sobeck}, C., {Haas}, M., {et~al.} 2014, \pasp, 126, 398
+
+\bibitem[{{Lindegren} {et~al.}(2016){Lindegren}, {Lammers}, {Bastian},
+  {Hern{\'a}ndez}, {Klioner}, {Hobbs}, {Bombrun}, {Michalik}, {Ramos-Lerate},
+  {Butkevich}, {Comoretto}, {Joliet}, {Holl}, {Hutton}, {Parsons},
+  {Steidelm{\"u}ller}, {Abbas}, {Altmann}, {Andrei}, {Anton}, {Bach},
+  {Barache}, {Becciani}, {Berthier}, {Bianchi}, {Biermann}, {Bouquillon},
+  {Bourda}, {Br{\"u}semeister}, {Bucciarelli}, {Busonero}, {Carlucci},
+  {Casta{\~n}eda}, {Charlot}, {Clotet}, {Crosta}, {Davidson}, {de Felice},
+  {Drimmel}, {Fabricius}, {Fienga}, {Figueras}, {Fraile}, {Gai}, {Garralda},
+  {Geyer}, {Gonz{\'a}lez-Vidal}, {Guerra}, {Hambly}, {Hauser}, {Jordan},
+  {Lattanzi}, {Lenhardt}, {Liao}, {L{\"o}ffler}, {McMillan}, {Mignard}, {Mora},
+  {Morbidelli}, {Portell}, {Riva}, {Sarasso}, {Serraller}, {Siddiqui}, {Smart},
+  {Spagna}, {Stampa}, {Steele}, {Taris}, {Torra}, {van Reeven}, {Vecchiato},
+  {Zschocke}, {de Bruijne}, {Gracia}, {Raison}, {Lister}, {Marchant},
+  {Messineo}, {Soffel}, {Osorio}, {de Torres}, \& {O'Mullane}}]{gaia_dr1}
+{Lindegren}, L., {Lammers}, U., {Bastian}, U., {et~al.} 2016, \aap, 595, A4
+
+\bibitem[{{Luger} {et~al.}(2016){Luger}, {Agol}, {Kruse}, {Barnes}, {Becker},
+  {Foreman-Mackey}, \& {Deming}}]{luger2016}
+{Luger}, R., {Agol}, E., {Kruse}, E., {et~al.} 2016, \aj, 152, 100
+
+\bibitem[{{Lurie} {et~al.}(2015){Lurie}, {Davenport}, {Hawley}, {Wilkinson},
+  {Wisniewski}, {Kowalski}, \& {Hebb}}]{lurie2015}
+{Lurie}, J.~C., {Davenport}, J.~R.~A., {Hawley}, S.~L., {et~al.} 2015, \apj,
+  800, 95
+
+\bibitem[{{McQuillan} {et~al.}(2013){McQuillan}, {Aigrain}, \&
+  {Mazeh}}]{mcquillan2013}
+{McQuillan}, A., {Aigrain}, S., \& {Mazeh}, T. 2013, \mnras, 432, 1203
+
+\bibitem[{{McQuillan} {et~al.}(2014){McQuillan}, {Mazeh}, \&
+  {Aigrain}}]{mcquillan2014}
+{McQuillan}, A., {Mazeh}, T., \& {Aigrain}, S. 2014, \apjs, 211, 24
+
+\bibitem[{{Perryman} {et~al.}(2001){Perryman}, {de Boer}, {Gilmore}, {H{\o}g},
+  {Lattanzi}, {Lindegren}, {Luri}, {Mignard}, {Pace}, \& {de
+  Zeeuw}}]{perryman2001}
+{Perryman}, M.~A.~C., {de Boer}, K.~S., {Gilmore}, G., {et~al.} 2001, \aap,
+  369, 339
+
+\bibitem[{{Reinhold} {et~al.}(2013){Reinhold}, {Reiners}, \&
+  {Basri}}]{reinhold2013}
+{Reinhold}, T., {Reiners}, A., \& {Basri}, G. 2013, \aap, 560, A4
+
+\bibitem[{{Skumanich}(1972)}]{skumanich1972}
+{Skumanich}, A. 1972, \apj, 171, 565
+
+\bibitem[{{Tremblay} {et~al.}(2014){Tremblay}, {Kalirai}, {Soderblom},
+  {Cignoni}, \& {Cummings}}]{tremblay2014}
+{Tremblay}, P.-E., {Kalirai}, J.~S., {Soderblom}, D.~R., {Cignoni}, M., \&
+  {Cummings}, J. 2014, \apj, 791, 92
+
+\bibitem[{{van Saders} {et~al.}(2016){van Saders}, {Ceillier}, {Metcalfe},
+  {Silva Aguirre}, {Pinsonneault}, {Garc{\'{\i}}a}, {Mathur}, \&
+  {Davies}}]{van-saders2016}
+{van Saders}, J.~L., {Ceillier}, T., {Metcalfe}, T.~S., {et~al.} 2016, \nat,
+  529, 181
+
+\bibitem[{{Vanderburg} {et~al.}(2015){Vanderburg}, {Johnson}, {Rappaport},
+  {Bieryla}, {Irwin}, {Lewis}, {Kipping}, {Brown}, {Dufour}, {Ciardi}, {Angus},
+  {Schaefer}, {Latham}, {Charbonneau}, {Beichman}, {Eastman}, {McCrady},
+  {Wittenmyer}, \& {Wright}}]{Vanderburg2015}
+{Vanderburg}, A., {Johnson}, J.~A., {Rappaport}, S., {et~al.} 2015, \nat, 526,
+  546
+
+\end{thebibliography}
