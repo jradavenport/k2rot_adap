@@ -17,6 +17,9 @@
 
 % make the word Kepler italicized
 \newcommand{\Kepler}{\textsl{Kepler}\xspace}
+\newcommand{\racomment}[1]{{\color{red}#1}}
+\newcommand{\ktwosc}{{\tt K2SC}}
+\newcommand{\ktwo}{{\tt K2}}
 
 % fuzzy math
 \def\lesssim{\mathrel{\hbox{\rlap{\hbox{\lower3pt\hbox{$\sim$}}}\hbox{\raise2pt\hbox{$<$}}}}}
@@ -52,7 +55,7 @@ The \Kepler mission broke new ground by producing rotation periods for tens-of-t
 
 To enable studies of stellar ages from rotation periods with K2, we propose to:
 
-{\bf 1.} Measure accurate rotation periods for every available K2 target, using new statistical methods we have developed to cope with significant instrumental systematics in the K2 data. This value-added dataset will improve the \Kepler data legacy for field stars, and provide a critical training set for the TESS mission. 
+{\bf 1.} Measure accurate rotation periods for every available K2 target, using new statistical methods we have developed to cope with significant instrumental systematics in the K2 data. This value-added dataset will improve the \Kepler data legacy for field stars, and provide a critical training set for the TESS mission.
 
 {\bf 2.} Produce updated gyrochronology relations based on a wider range of field star ages, and additional open clusters within the K2 fields.
 
@@ -78,7 +81,7 @@ Indeed, most galactic archaeology surveys target exactly these properties.
 For exoplaneteers, masses and radii have historically been the most important
 stellar parameters for understanding planetary systems. With a
 growing number of planet hosts with precise masses and radii, attention is turning
-toward other parameters such as ages to under the history and evolution of these systems. 
+toward other parameters such as ages to under the history and evolution of these systems.
 Age is therefore a fundamental stellar parameter of great interest to two large
 communities of astronomers. However it is a difficult attribute to measure for
 main sequence F, G, K, and M stars in the field, in part because low-mass dwarfs do not move far on the Color-Magnitude
@@ -88,7 +91,7 @@ competing stellar evolution models predict different ages for the same star.
 %producing the large quantity of ages needed for exoplanet and galactic
 %population studies.
 Of all the measurable properties for a large numbers of stars, rotation periods contain
-the most information about stellar age, and provide the best leverage for advancing our knowledge of galactic archeology as well as exoplanet population demographics. 
+the most information about stellar age, and provide the best leverage for advancing our knowledge of galactic archeology as well as exoplanet population demographics.
 
 
 
@@ -97,7 +100,7 @@ the most information about stellar age, and provide the best leverage for advanc
 \subsection{Age-Dating Field Stars with Rotation}
 The seminal work of \citet{skumanich1972} laid the foundation for our model of the stellar age--rotation--activity relationship. When stars settle onto the main sequence they may have a range of initial rotation periods based on the angular momentum available in their primordial environment. However, rotation velocities converge by a few 100 Myr (for Solar-type stars), and then follow a standard spin-down evolution \citep{barnes2010}. Stars continuously lose angular momentum due to magnetically driven winds. Stellar rotation also drives the internal magnetic dynamo, resulting in decreasing surface magnetic activity as the star slows (rotation period increases). Older, slower rotating stars therefore have smaller starspots, making the detection rotation more difficult as stars age. Deriving ages for field stars therefore requires knowing their color (as a proxy for stellar temperature or mass) and their surface rotation period \citep{barnes2007}, and can produce ages with errors as low as $\sim$10\% \citep{barnes2010}.
 
-The rate of this angular momentum loss has historically been calibrated using main sequence stars at a range of masses in stellar clusters with known ages, leading to a useful clock called ``gyrochronology'' \citep{barnes2003}. Several gyrochronology model (or gyrochrones) parameterizations exist, each using various age benchmarks for calibration. Nearly all gyrochronology models suffer from lack of constraint at older ages; often the Sun is the only benchmark used older than $\sim$1 Gyr since accessible nearby open clusters are typically young ($<600$ Myr). 
+The rate of this angular momentum loss has historically been calibrated using main sequence stars at a range of masses in stellar clusters with known ages, leading to a useful clock called ``gyrochronology'' \citep{barnes2003}. Several gyrochronology model (or gyrochrones) parameterizations exist, each using various age benchmarks for calibration. Nearly all gyrochronology models suffer from lack of constraint at older ages; often the Sun is the only benchmark used older than $\sim$1 Gyr since accessible nearby open clusters are typically young ($<600$ Myr).
 
 \begin{figure}[!t]
 \centering
@@ -125,7 +128,7 @@ Space-based photometry surveys designed for exoplanet transit searches such as \
 This bounty of rotation periods has also allowed the first ensemble investigations in to stellar surface differential rotation \citep[e.g.][]{reinhold2013}, revealed stars with near solid-body rotation \citep{davenport2015a}, and highlighted the many degeneracies in disentangling starspot evolution and differential rotation \citep{aigrain2015}.
 
 
-After hardware failures made observations of the original field impossible, an extended \Kepler mission was designed to observe many fields with $\sim$3 month durations. The K2 mission has observed fields spaced along the ecliptic plane, ranging from low galactic latitudes that include multiple open clusters, to high galactic latitudes that include many older field stars \citep{howell2014}. The K2 fields also include several benchmark stellar clusters including the Solar-age M67, the Pleiades and Hyades, and M35. To date K2 has released data from 10 distinct campaigns (or fields), including more than 252,000 targets, exceeding the original \Kepler mission. An additional 6 campaigns are currently scheduled. Importantly, K2 data quality has been demonstrated to approach that of the original \Kepler mission \citep{luger2016}, and has been successfully used to measure rotation periods for select targets such as open cluster stars \citep[e.g.][]{douglas2017}. 
+After hardware failures made observations of the original field impossible, an extended \Kepler mission was designed to observe many fields with $\sim$3 month durations. The K2 mission has observed fields spaced along the ecliptic plane, ranging from low galactic latitudes that include multiple open clusters, to high galactic latitudes that include many older field stars \citep{howell2014}. The K2 fields also include several benchmark stellar clusters including the Solar-age M67, the Pleiades and Hyades, and M35. To date K2 has released data from 10 distinct campaigns (or fields), including more than 252,000 targets, exceeding the original \Kepler mission. An additional 6 campaigns are currently scheduled. Importantly, K2 data quality has been demonstrated to approach that of the original \Kepler mission \citep{luger2016}, and has been successfully used to measure rotation periods for select targets such as open cluster stars \citep[e.g.][]{douglas2017}.
 
 
 
@@ -159,32 +162,105 @@ Right -- Figure 3 from \citet{davenport2017}, showing all \Kepler rotation perio
 %%%%%%%%%%%%%%%%%%%
 \section{Proposed Research}
 %%%%%%%%%
-\subsection{Measuring Rotation from K2 Using the Systematics-Insensitive Periodogram }
-we propose the first systematic study of stellar rotation periods from the K2 data.
+\subsection{Measuring Rotation periods}
+We propose the first systematic study of stellar rotation periods from the K2
+data.
 
-this will include $\sim$XXXXX stars from Campaigns 0-16. This includes data for multiple stellar clusters that were taken as part of the Guest Observer program.
+This will include $\sim$XXXXX stars from Campaigns 0-16.
+This includes data for multiple stellar clusters that were taken as part of
+the Guest Observer program.
+\racomment{I'm not sure we want to get into measuring rotation periods for
+stars in the cluster superstamps. Besides, there are other people working on
+this. I think we should stick to the regular K2 targets.}
 
-data will be reduced using SOME FLAVOR of K2 pipeline.
+Part of our study will be to assess the qualities of the various data
+reduction pipelines available for K2 light curves.
+Each detrending algorithm uses a slightly different approach and will almost
+certainly provide light curves that differ enough to produce a number of
+discrepant rotation periods.
+We will compare the performance of three pipelines in particular: the
+\citet{Vanderburg2015}, lightcurves, the {\tt everest} \citet{Luger2016} light
+curves and the \ktwosc\ \citet{Aigrain2016} light curves.
+By visually examining the light curves and Lomb-Scargle periodograms of a
+number of targets in common between the detrending methods, we will ascertain
+which pipeline best preserves signal on long timescales.
+% The \ktwosc\ pipeline removes instrumental systematics using a non-parametric
+% approach: a Gaussian process is used to model the instrumental systematics,
+% astrophysical variability and white noise in each light curve.
+All three of these pipelines are optimized for planet search, however the
+\citet{Aigrain2016} light curves are designed to preserve stellar variability
+as much as possible.
+We expect to find that these light curves preserve rotation signals on the
+longest timescales.
+Once establishing the best detrending method for preserving stellar
+variability, we will download all the available light curves and, if
+necessary, run the pipeline on any outstanding targets.
+We will also produce and examine periodograms using the
+systematics-insensitive periodogram (SIP) \citep{Angus2015}.
+This method simulataneously fits light curves with a sinusoid and a noise
+model constructed from 150 principle components derived from a PCA of the
+entire set of \ktwo\ light curves for a given campaign.
+Although developed for asteroseismology, this algorithm may also be applicable
+to rotation period analysis, however at the longer timescales of variation
+produced by stellar rotation, it is likely that the results will suffer
+from overfitting.
 
+We will use a combination of Lomb-Scargle and autocorrelation function
+techniques to produce a quick catalogue for early analysis.
+Although both of these methods are sensitive to noise and can produce spurious
+rotation period measurements, there relative speed will allow us to rapidly
+begin initial analysis of the results.
+We will then apply a procedure for obtaining more accurate and precise
+rotation periods using probabilistic inference.
+Co-I Angus recently developed a method for rotation period inference using a
+Gaussian Process (GP) to model the light curve in the time-domain, rather than
+extracting periodic signals in the frequency domain \citet{Angus2017}.
+This GP method produces slightly more precise and accurate rotation periods
+with more representative uncertainties than Lomb-Scargle and autocorrelation
+methods.
+The disadvantage of this GP regression based method is that it can be
+computationally expensive.
+However, with the recently developed method for fast Gaussian process
+inference, {\tt celerite} \citep{Foreman-Mackey2017}, even performing MCMC
+with the thousands of data points in a \ktwo\ light curve may only take a few
+minutes.
+The advantage of computing probabilistic rotation periods is that one can
+bypass the need to calculate a rotation period at all and simply infer the
+parameters of stellar populations directly from the light curves themselves.
+In other words, one can perform hierarchical inference more easily.
+This may be a level of sophistication that is above and beyond our science
+goals but it is worth noting that we could take this approach if the data and
+scientific question warranted it.
 
-the \citet{angus2016} rotation period pipeline will then be applied to every light curve. we will generate and save every periodogram for potential follow-up analysis of differential rotation and multi-period systems
+Wherever possible we will mask out discontinous astrophysical signals, such as
+eclipsing binaries, planet transit or flares that may distort the rotation
+period signal.
+We will make use of exoplanet and binary catalogs to identify planet transits
+and eclipses.
+We will apply a flare removal algorithm to identify and remove flares.
+It may still be necessary to apply a low-pass filter to the data in order to
+remove high frequency features that we miss.
+Fortunately, most of the stellar rotation signals of interest for this study
+have timescales longer than around a day and will be relatively unaffected by
+a low-pass filtering algorithm.
 
-spurious signals from transits and flares will be filtered out (some smoothing or high-freq removed in the SIP?)
+The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield
+of $\sim25\%$ of stars had measurable rotation periods using the
+Autocorrelation Function. From our sample of 252,000 available K2 targets, we
+expect to recover $\sim$63,000 new rotation periods, bringing the total
+\Kepler/K2 sample to $\sim$100,000.
 
-for stars with good period recovery, fourier fits will identify eclipsing binaries and pulsating systems (or something like this)
+We have already measured a number of \ktwo\ rotation periods using an
+autocorrelation function approach.
 
-
-\begin{figure}[!th]
-\centering
-\includegraphics[width=4in]{angus2016_fig6.png}
-\caption{
-figure 6 from \citet{angus2016}, showing the processing of the light curve and resulting SIPeriodogram. more simple methods give erroneous periods for this object of either 3 days via ACF, or 59 days via normal Lomb-Scargle methods.
-}
-\label{fig:sip}
-\end{figure}
-
-The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield of $\sim25\%$ of stars had measurable rotation periods using the Autocorrelation Function. From our sample of 252,000 available K2 targets, we expect to recover $\sim$63,000 new rotation periods, bringing the total \Kepler/K2 sample to $\sim$100,000.
-
+% \begin{figure}[!th]
+% \centering
+% \includegraphics[width=4in]{angus2016_fig6.png}
+% \caption{
+% figure 6 from \citet{angus2016}, showing the processing of the light curve and resulting SIPeriodogram. more simple methods give erroneous periods for this object of either 3 days via ACF, or 59 days via normal Lomb-Scargle methods.
+% }
+% \label{fig:sip}
+% \end{figure}
 
 %%%%%%%%%
 \subsection{Exploring the Period Bimodality}
