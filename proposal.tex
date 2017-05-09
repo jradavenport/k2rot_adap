@@ -128,7 +128,7 @@ Space-based photometry surveys designed for exoplanet transit searches such as \
 This bounty of rotation periods has also allowed the first ensemble investigations in to stellar surface differential rotation \citep[e.g.][]{reinhold2013}, revealed stars with near solid-body rotation \citep{davenport2015a}, and highlighted the many degeneracies in disentangling starspot evolution and differential rotation \citep{aigrain2015}.
 
 
-After hardware failures made observations of the original field impossible, an extended \Kepler mission was designed to observe many fields with $\sim$3 month durations. The K2 mission has observed fields spaced along the ecliptic plane, ranging from low galactic latitudes that include multiple open clusters, to high galactic latitudes that include many older field stars \citep{howell2014}. The K2 fields also include several benchmark stellar clusters including the Solar-age M67, the Pleiades and Hyades, and M35. To date K2 has released data from 10 distinct campaigns (or fields), including more than 252,000 targets, exceeding the original \Kepler mission. An additional 6 campaigns are currently scheduled. Importantly, K2 data quality has been demonstrated to approach that of the original \Kepler mission \citep{luger2016}, and has been successfully used to measure rotation periods for select targets such as open cluster stars \citep[e.g.][]{douglas2017}.
+After hardware failures made observations of the original field impossible, an extended \Kepler mission was designed to observe many fields with $\sim$3 month durations. The K2 mission has observed fields spaced along the ecliptic plane, ranging from low galactic latitudes that include multiple open clusters, to high galactic latitudes that include many older field stars \citep{howell2014}. The K2 fields also include several benchmark stellar clusters including the Solar-age M67, the Pleiades and Hyades, and M35. To date K2 has released data from 10 distinct campaigns (or fields), including more than 204,000 targets. An additional 4 campaigns are underway with $\sim$94,000 targets announced, and 2 campaigns pending scheduling. In total, the K2 sample may yield over 350,000 light curves, far exceeding the original \Kepler mission. Importantly, K2 data quality has been demonstrated to approach that of the original \Kepler mission \citep{luger2016}, and has been successfully used to measure rotation periods for select targets such as open cluster stars \citep[e.g.][]{douglas2017}.
 
 
 
@@ -175,9 +175,7 @@ The second scenario to explain this feature is that the period bimodality occurs
 %%%%%%%%%
 \subsection{Measuring Rotation periods}
 We propose the first systematic study of stellar rotation periods from the K2
-data.
-
-This will include $\sim$XXXXX stars from Campaigns 0-16.
+data. This will include the nearly 300,000 light curves from Campaigns 0-14.
 %This includes data for multiple stellar clusters that were taken as part of
 %the Guest Observer program.
 %\racomment{
@@ -193,8 +191,8 @@ Each detrending algorithm uses a slightly different approach and will almost
 certainly provide light curves that differ enough to produce a number of
 discrepant rotation periods.
 We will compare the performance of three pipelines in particular: the
-\citet{Vanderburg2015}, light curves, the {\tt everest} \citet{luger2016} light
-curves and the \ktwosc\ \citet{aigrain2016} light curves.
+\citet{Vanderburg2015} light curves, the {\tt everest} \citet{luger2016} light
+curves, and the \ktwosc\ \citet{aigrain2016} light curves.
 By visually examining the light curves and Lomb-Scargle periodograms of a
 number of targets in common between the detrending methods, we will ascertain
 which pipeline best preserves signal on long timescales.
@@ -206,6 +204,8 @@ All three of these pipelines are optimized for planet search, however the
 as much as possible.
 We expect to find that these light curves preserve rotation signals on the
 longest timescales.
+
+
 Once establishing the best detrending method for preserving stellar
 variability, we will download all the available light curves and, if
 necessary, run the pipeline on any outstanding targets.
@@ -252,7 +252,8 @@ eclipsing binaries, planet transit or flares that may distort the rotation
 period signal.
 We will make use of exoplanet and binary catalogs to identify planet transits
 and eclipses.
-We will apply a flare removal algorithm to identify and remove flares.
+We will apply the flare detection algorithm {\tt appaloosa}, built by PI Davenport, 
+to identify and remove flares.
 It may still be necessary to apply a low-pass filter to the data in order to
 remove high frequency features that we miss.
 Fortunately, most of the stellar rotation signals of interest for this study
@@ -261,9 +262,9 @@ a low-pass filtering algorithm.
 
 The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield
 of $\sim25\%$ of stars had measurable rotation periods using the
-Autocorrelation Function. From our sample of 252,000 available K2 targets, we
-expect to recover $\sim$63,000 new rotation periods, bringing the total
-\Kepler/K2 sample to $\sim$100,000.
+Autocorrelation Function. From our sample of nearly 300,000 available K2 targets, we
+expect to recover over 70,000 new periods, bringing the total
+\Kepler/K2 sample to $\sim$100,000 stars with measured rotation periods.
 
 We have already measured a number of \ktwo\ rotation periods using an
 autocorrelation function approach.
@@ -276,6 +277,10 @@ autocorrelation function approach.
 % }
 % \label{fig:sip}
 % \end{figure}
+
+
+
+
 
 %%%%%%%%%
 \subsection{Exploring the Period Bimodality}
@@ -302,11 +307,24 @@ gaia DR1 \citep{gaia_dr1}
 
 %%%%%%%%%
 \subsection{Mapping Ages in each Field}
+
+%Demonstration figure?
+\begin{figure}[!th]
+\centering
+%\includegraphics[width=3.5in]{}
+\fbox{\rule{3in}{0pt}\rule[-0.5ex]{0pt}{24ex}}
+\caption{
+DEMONSTRATION FIGURE OF CHRONOMETER? 
+}
+\label{fig:chrono}
+\end{figure}
+
+
+
 our catalog of rotation periods from K2, combined with existing catalogs from Kepler, we will have the largest set of rotation periods ever to use for population analysis. using new technique being developed by Ruth (Chronometer) we will have improved age estimate for every star based on single rotation values. then we combine this to get age distribution within each K2 field.
 
-Demonstration figure?
 
-discussion of improved gyrochronology calibration?
+%discussion of improved gyrochronology calibration?
 
 this is partially an extension of the period bimodality work (if it's an age effect), but to create a detailed map of the ages of these field stars at a range of galactic latitudes in the 17 pencil-beams available from K2. combining with the periods from Kepler, will be even better. ultimately we'd like to compare to the age distributions in simulations of these fields from TRILEGAL, and from other age indicators (asteroseismology, flare ages, etc)
 
@@ -314,11 +332,11 @@ this is partially an extension of the period bimodality work (if it's an age eff
 
 %%%%%%%%%%%%%%%%%%%
 \section{Team Qualifications}
-PI Davenport has used \Kepler to conduct the largest survey to-date of stellar activity from flares, as well as multiple investigations of starspots and their evolution with time using \Kepler data. From these studies, Davenport has developed an age model for flare activity that will be directly comparable to the ages and starspot amplitudes derived from this study. He has also recently discovered the rotation period bimodality first noted with \Kepler M dwarfs by \citet{mcquillan2013} extends to G and K dwarf stars \citep{davenport2017}.
+PI Davenport has used \Kepler to conduct the largest survey to-date of stellar activity from flares, as well as multiple investigations of starspots and their evolution with time using \Kepler data. From these studies, Davenport has developed an age model for flare activity that will be directly comparable to the ages and starspot amplitudes derived from this study. He also recently discovered the rotation period bimodality first noted with \Kepler M dwarfs by \citet{mcquillan2013} extends to G and K dwarf stars \citep{davenport2017}.
 Davenport previously collaborated on NASA ADP grant NNX09AC77G to characterize NIR variability using the 2MASS Calibration Scan Point Source Working Database \citep{davenport2012,davenport2015a}.
-He has mentored numerous students on projects using \Kepler data, resulting in student-led publications such as the flare activity of a unique M dwarf binary system GJ 1245AB \citep{lurie2015}, and exploring the poorly understood origins of wide binary stars through stellar rotation (R. Clarke in prep). He will manage the overall project, and lead the investigation and publication of the period bimodality exploration.
+He has mentored numerous students on projects using \Kepler data, resulting in student-led publications such as the flare activity of a unique M dwarf binary system GJ 1245AB \citep{lurie2015}, and exploring the poorly understood origins of wide binary stars through stellar rotation (R. Clarke in prep). He will manage the overall project, detect and remove short period variability from flares in the light curves, and lead the investigation and publication on the nature of the bimodal period distribution.
 
-Co-I Angus is an expert in the extraction of periodic signals from \Kepler data using Gaussian Processes \citep{angus2016c} and other cutting-edge statistical techniques. She is the author of tools for generating Systematics-Insensitive Periodograms for both \Kepler and K2 data \citep{angus2016}, as well as new gyrochronology calibrations using \Kepler asteroseismic targets \citep{angus2015}. She will lead the effort to measure and publish rotation periods for all K2 sources, and lead the graduate student in measuring ages for field stars.
+Co-I Angus is an expert in the extraction of periodic signals from \Kepler data using Gaussian Processes \citep{angus2016c} and other cutting-edge statistical techniques. She is the author of tools for generating Systematics-Insensitive Periodograms for both \Kepler and K2 data \citep{angus2016}, as well as new gyrochronology calibrations using \Kepler asteroseismic targets \citep{angus2015}. She will lead the effort to measure and publish rotation periods for all K2 sources, and guide students in measuring ages for field stars.
 
 Covey
 
