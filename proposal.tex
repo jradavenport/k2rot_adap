@@ -284,11 +284,6 @@ autocorrelation function approach.
 
 %%%%%%%%%
 \subsection{Exploring the Period Bimodality}
-by combining our sample with the distances provided in the forthcoming Gaia DR2 catalog, we will be able to extend the methodology of \citet{davenport2017} to filter our subgiants and binary stars for our entire sample.
-
-we then can make 3d exploration of period distribution, to see if the bimodality exists for all field stars near the sun.
-
-the big goal here is to decide which explanation is correct!
 
 \begin{figure}[!th]
 \centering
@@ -300,8 +295,22 @@ the big goal here is to decide which explanation is correct!
 \label{fig:cmd}
 \end{figure}
 
+To determine which formation mechanism gives rise to the bimodal period distribution seen in the original \Kepler field, we must determine if the feature is only present in nearby stars. However, we must also rule out the unlikely possibility that the bimodality is due to some systematic error in the \Kepler data. Within each K2 campaign we will visually inspect the low-mass stars in the color--period space ($T_{eff}<4500$), as illustrated in Figure \ref{fig:bimodal} for the \citet{mcquillan2013} M dwarf sample. Since these coolest stars are only visible with \Kepler out to a few hundred pc, this will provide a test of the localization of the bimodality, using a small volume-limited sample. This test provides an important reality check against the period bimodality being due to the processing of the original \Kepler data itself. Since this initial nearby sample will probe the same close ($\sim$250 pc) volume as in \citet{mcquillan2013} and \citet{davenport2017}, we expect the period bimodality will appear up in most K2 fields for the M dwarfs centered around $P_{rot}=20$ days.
+
+
+
+
+by combining our sample with the distances provided in the forthcoming Gaia DR2 catalog, we will be able to extend the methodology of \citet{davenport2017} to filter our subgiants and binary stars for our entire sample.
 data from the Gaia mission \citep{perryman2001}
 gaia DR1 \citep{gaia_dr1}
+the use of higher mass stars is critical, to reach out to $\sim$3 kpc in all K2 fields, since lower mass stars only sample nearest few hundred pc.
+
+
+combine data from multiple campaigns sampling similar galactic latitudes such as C1, C3, C10, and C12 near the North and South Galactic Caps, and C2, C7, and C13 above and below the Galactic Plane.
+can then measure the strength of the bimodal feature in bins of distance for different galactic latitudes. Make measurement like Figure \ref{fig:cmd}b, by fitting the subgiant-filtered sample with Gaussian period distributions (in log Period space). If the bimodality is due to a localized age distribution of stars, we expect the feature will disappear in the color--period diagram as we go to further distances and sample different star formation histories. 
+%we then can make 3d exploration of period distribution, to see if the bimodality exists for all field stars near the sun.
+
+
 
 
 
@@ -311,8 +320,9 @@ gaia DR1 \citep{gaia_dr1}
 %Demonstration figure?
 \begin{figure}[!th]
 \centering
-%\includegraphics[width=3.5in]{}
-\fbox{\rule{3in}{0pt}\rule[-0.5ex]{0pt}{24ex}}
+%\includegraphics[width=3.5in]{FIGURE.png}
+% thing i learned: how to draw a box: https://tex.stackexchange.com/a/213749
+\fbox{\rule{3in}{0pt}\rule[-0.5ex]{0pt}{24ex}} 
 \caption{
 DEMONSTRATION FIGURE OF CHRONOMETER? 
 }
