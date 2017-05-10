@@ -20,6 +20,11 @@
 \newcommand{\racomment}[1]{{\color{red}#1}}
 \newcommand{\ktwosc}{{\tt K2SC}}
 \newcommand{\ktwo}{{\tt K2}}
+\newcommand{\av}{$A_v$}
+\newcommand{\eg}{{\it e.g.}}
+\newcommand{\ie}{{\it i.e.}}
+\newcommand{\feh}{$[Fe/H]$}
+\newcommand{\teff}{$T_{\mathrm{eff}}$}
 
 % fuzzy math
 \def\lesssim{\mathrel{\hbox{\rlap{\hbox{\lower3pt\hbox{$\sim$}}}\hbox{\raise2pt\hbox{$<$}}}}}
@@ -324,7 +329,7 @@ We will measure the strength of the bimodal feature by examining the period dist
 \begin{figure}[!t]
 \centering
 \includegraphics[width=4in]{all_hist_working.png}
-    \caption{A preliminary demonstration of the power of rotation for age
+\caption{A preliminary demonstration of the power of rotation for age
     inference, created using {\tt chronometer}.
     The palest gray histogram shows the probability distribution over ages
     obtained for the Sun at 10 parsecs using only J, H and K band colors.
@@ -338,22 +343,43 @@ We will measure the strength of the bimodal feature by examining the period dist
     stars.
     The final model will contain several thousand stars and kinematic
     information so will be even more powerful than this.
-\label{fig:chronoo}
+}
+\label{fig:chrono}
 \end{figure}
+
 
 Combining our catalog of rotation periods from K2 with the existing rotation
 catalogs from Kepler will produce the largest set of rotation periods
 currently available.
-Using a new technique being developed by CoI Angus ({\tt chronometer}), we
+Using a new technique being developed by CoI Angus, {\tt chronometer}, we
 will produce an improved age estimate for every star based on rotation values,
-photometric colors and galactic kinematics (from Gaia proper motions).
+photometric colors and galactic kinematics from Gaia proper motions.
 This age map may be used to infer the age distribution of stars across and
 between K2 fields.
 
 {\tt chronometer} extends isochrone fitting by simultaneously fitting an
 age-rotation relation and a age-velocity dispersion relation.
 It combines the information available from these three dating techniques, thus
-providing more accurate ages.
+providing more accurate ages than any one of the techniques alone.
+Of course, this relies on the rotational and kinematic age relations being
+correct.
+The age-velocity dispersion relations are relatively well studied and simple.
+The current picture of the formation history of stars in the Milky Way is that
+they are formed in the thin disc with relatively small vertical velocities and
+actions.
+As time passes these stars encounter more scattering events~---~close
+encounters with other stars, and/or interactions with galactic spiral arms.
+With each of these interactions the star's orbit in the Milky Way is excited.
+This results in a slow heating of stellar orbits.
+Old stars reside in the thick disc of the Milky Way~---~a disc that extends
+out of the plane of the galaxy.
+These stars can be identified in Gaia DR1 by converting their proper motions,
+positions and parallaxes into vertical actions by integrating their orbits in
+the potential of the Milky Way.
+Larger vertical actions (larger angular momenta in the vertical direction)
+correspond to older stars.
+Truely the {\it dispersion} in vertical action is a much better tracer of age
+than vertical action itself.
 
 We combine the following dating methods: gyrochronology, isochrone fitting,
 asteroseismology and galactic kinematics into one model.
