@@ -160,14 +160,14 @@ Right -- Figure 3 from \citet{davenport2017}, showing all \Kepler rotation perio
 %Explanations are either a break from single spin-down law (possibly from different initial periods, or some new physics maybe due to chemical abundances) or represents an age bimodality of local stars.
 {\bf Two formation scenarios have been proposed to explain the observed period bimodality.} The first scenario, initially proposed by \citet{mcquillan2013}, is the rotation period distribution reflects the local star formation history, and thus the bimodality represents a drop in the star formation rate around 600 Myr ago. This model is supported by both the extension of the bimodality to earlier spectral types by \citet{davenport2017}, and also the tentative detection that the two rotation period populations have distinct proper motion distributions. However, such a variation in the star formation rate on short timescales has some tension with independent observational efforts to determine the local star formation history. While Color--Magnitude diagram inversions from Hipparcos have suggested a similarly short timescale variation in star formation of  $\sim$0.5 Gyr \citep{hernandez2000}, other studies find slower variations over several Gyr \citep[e.g.][]{cignoni2006}. Using white dwarf cooling models to infer the local formation history (``cosmochronology'') also supports higher star formation several Gyr ago, but can rarely achieve age resolution better than $\sim$1 Gyr due to small sample sizes \citep{tremblay2014}. The spatial extent of such coherent and localized variations in star formation history is unknown.
 
-The second scenario to explain this feature is that the period bimodality occurs due to a previously unknown variation in the spin-down evolution for low-mass stars. In this scenario the star formation history would be continuous over the past $\sim$1 Gyr, and around 600 Myr stars would move quickly through the observed period minima due to this unknown phase transition or feedback mechanism. While this model is not currently predicted by angular momentum loss simulations, such rapid transition points in the angular momentum evolution are observed in young clusters. Stars move quickly from the rapidly rotating ``convective'' sequence (periods of $\lesssim1$ day) to the ``interface'' sequence (periods of several days) during the first few hundred Myr, with lower mass stars taking longer to make this transition as they settle onto the main sequence \citep{barnes2003}. 
+The second scenario to explain this feature is that the period bimodality occurs due to a previously unknown variation in the spin-down evolution for low-mass stars. In this scenario the star formation history would be continuous over the past $\sim$1 Gyr, and around 600 Myr stars would move quickly through the observed period minima due to this unknown phase transition or feedback mechanism. While this model is not currently predicted by angular momentum loss simulations, such rapid transition points in the angular momentum evolution are observed in young clusters. Stars move quickly from the rapidly rotating ``convective'' sequence (periods of $\lesssim1$ day) to the ``interface'' sequence (periods of several days) during the first few hundred Myr, with lower mass stars taking longer to make this transition as they settle onto the main sequence \citep{barnes2003}.
 
 {\bf The K2 rotation period sample provides the ideal dataset to test these two formation scenarios.} If the bimodality is due to an age distribution we would expect to only see the feature locally, and that it would disappear at further distances or along different lines of sight where small scale variations in the star formation history are less apparent. The kinematic separation between the two rotation period populations would be reinforced by supplemental measurements from the upcoming public Gaia data releases. However, if the bimodality is truly due to a transition point in the spin-down evolution at young ages, we would expect to find no little to no variation in this feature as seen in Figure \ref{fig:bimodal}b with galactic position or between K2 fields.
 
 % Since this effect is seen only within 300pc so far (and only within Kepler data) due to sample properties, cannot be sure what spatial or compositional dependence this has, need a sample that spans a wider spatial area and more ages of stars
- 
- 
- 
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -228,7 +228,7 @@ We will then apply a procedure for obtaining more accurate and precise
 rotation periods using probabilistic inference.
 Co-I Angus recently developed a method for rotation period inference using a
 Gaussian Process (GP) to model the light curve in the time-domain, rather than
-extracting periodic signals in the frequency domain \citet{angus2016c}. 
+extracting periodic signals in the frequency domain \citet{angus2016c}.
 % Is this IAU reference correct, or do you have a paper?%\citet{Angus2017}.
 This GP method produces slightly more precise and accurate rotation periods
 with more representative uncertainties than Lomb-Scargle and autocorrelation
@@ -252,7 +252,7 @@ eclipsing binaries, planet transit or flares that may distort the rotation
 period signal.
 We will make use of exoplanet and binary catalogs to identify planet transits
 and eclipses.
-We will apply the flare detection algorithm {\tt appaloosa}, built by PI Davenport, 
+We will apply the flare detection algorithm {\tt appaloosa}, built by PI Davenport,
 to identify and remove flares.
 It may still be necessary to apply a low-pass filter to the data in order to
 remove high frequency features that we miss.
@@ -310,7 +310,7 @@ To determine which formation mechanism gives rise to the bimodal period distribu
 Since the K2 campaign fields are spread across the entire ecliptic plane, rotation period data from fields with similar galactic latitudes can be combined to improve the sample size when searching for the bimodality as a function of distance. For example, C1, C3, C10, and C12 are near the North and South Galactic Caps, while C2, C7, and C13 straddle the Galactic Plane. The size scale over which the Milky Way's star formation history varies is unknown. In Andromeda significant variations in star formation histories are seen between 100 pc volumes, as well as large galaxy-wide trends \citep[e.g.][]{lewis2015}. We will therefore conduct our search for the period bimodality as a function of distance in each \Kepler/K2 pointing separately, as well in bins of galactic latitude.
 
 
-We will measure the strength of the bimodal feature by examining the period distribution centered around a 600 Myr gyrochrone, as in Figure \ref{fig:cmd}. By fitting multiple Gaussians to the period distribution in each bin of galactic latitude and distance, we can empirically determine the significance of the bimodality. The Bayesian Information Criterion allows us to analytically determine if one or two (or more) Gaussian curves best represent the rotation distribution in each spatial bin. 
+We will measure the strength of the bimodal feature by examining the period distribution centered around a 600 Myr gyrochrone, as in Figure \ref{fig:cmd}. By fitting multiple Gaussians to the period distribution in each bin of galactic latitude and distance, we can empirically determine the significance of the bimodality. The Bayesian Information Criterion allows us to analytically determine if one or two (or more) Gaussian curves best represent the rotation distribution in each spatial bin.
  If the bimodality is due to a localized age distribution of stars, we expect the feature will disappear in this space as we go to further distances and sample different star formation histories. Other period bimodalities may be present, given different star formation histories, but will not align to the 600 Myr gyrochrone. However if the bimodality is a generic feature of angular momentum loss, this two-Gaussian fit from \citet{davenport2017} will be preferred for every latitude and distance bin.
 
 
@@ -321,29 +321,121 @@ We will measure the strength of the bimodal feature by examining the period dist
 %%%%%%%%%
 \subsection{Mapping Ages in each Field}
 
-%Demonstration figure?
-\begin{figure}[!th]
+\begin{figure}[!t]
 \centering
-%\includegraphics[width=3.5in]{FIGURE.png}
-% thing i learned: how to draw a box: https://tex.stackexchange.com/a/213749
-\fbox{\rule{3in}{0pt}\rule[-0.5ex]{0pt}{24ex}} 
-\caption{
-DEMONSTRATION FIGURE OF CHRONOMETER? 
-}
-\label{fig:chrono}
+\includegraphics[width=4in]{all_hist_working.png}
+    \caption{A preliminary demonstration of the power of rotation for age
+    inference, created using {\tt chronometer}.
+    The palest gray histogram shows the probability distribution over ages
+    obtained for the Sun at 10 parsecs using only J, H and K band colors.
+    The darker gray histogram shows the age posterior for the Sun at 10
+    parsecs using colors and spectroscopic information ($T_{\mathrm{eff}}$,
+    $\log(g)$ and $[Fe/H]$).
+    The darkest gray histogram shows the age posterior when colors,
+    spectroscopic information and a rotation period used to infer the age of
+    the Sun at 10 parsecs.
+    This is a preliminary plot with no kinematic information and just three
+    stars.
+    The final model will contain several thousand stars and kinematic
+    information so will be even more powerful than this.
+\label{fig:chronoo}
 \end{figure}
 
+Combining our catalog of rotation periods from K2 with the existing rotation
+catalogs from Kepler will produce the largest set of rotation periods
+currently available.
+Using a new technique being developed by CoI Angus ({\tt chronometer}), we
+will produce an improved age estimate for every star based on rotation values,
+photometric colors and galactic kinematics (from Gaia proper motions).
+This age map may be used to infer the age distribution of stars across and
+between K2 fields.
 
+{\tt chronometer} extends isochrone fitting by simultaneously fitting an
+age-rotation relation and a age-velocity dispersion relation.
+It combines the information available from these three dating techniques, thus
+providing more accurate ages.
 
-our catalog of rotation periods from K2, combined with existing catalogs from Kepler, we will have the largest set of rotation periods ever to use for population analysis. using new technique being developed by Ruth (Chronometer) we will have improved age estimate for every star based on single rotation values. then we combine this to get age distribution within each K2 field.
+We combine the following dating methods: gyrochronology, isochrone fitting,
+asteroseismology and galactic kinematics into one model.
+In classical isochrone fitting, one might calculate the probability of age
+$A$, mass $M$, \feh, distance $D$ and extinction \av, given a set of
+apparent magnitudes in different filters, \eg\ $M_V$, $M_J$ and $M_K$.
+This can be written
+\begin{eqnarray}
+    &&p(A, M, [Fe/H], D, A_v | M_V, M_J, M_K) \\ \nonumber
+    \propto &&p(M_v, M_J, M_K | A, M, [Fe/H], D, A_v) \\ \nonumber
+    &&p(A)p(M)p([Fe/H])p(D)p(A_v).
+\end{eqnarray}
+There are no free parameters in the model here --- the model is entirely
+determined by physics and does not need to be calibrated further.
+Similarly, in classical gyrochronology, one might calculate the probability of
+age given rotation period and $B-V$ colour,
+\begin{equation}
+    p(A | P_{rot}, B-V) \propto p(P_{rot}, B-V | A)p(A)
+\end{equation}
+In a gyrochronology model however our understanding of the physics is
+incomplete and some free parameters must be calibrated.
+In the \citet{Barnes2003} gyrochronology parameterisation, $A =
+P_{\mathrm{rot}}^{1/n} - (B-V-0.4)^{b/n}$, these free parameters are $a$, $b$
+and $n$.
+During a calibration exercise, the observables, $A$, $P_{rot}$ and $B-V$ will
+be known and the parameters, $a$, $b$ and $n$ will be inferred,
+\begin{equation}
+    p(a, b, n | \{A\}, \{P_{rot}\}, \{B-V\}) \propto \{p(A\}, \{P_{rot}\},
+    \{B-V\} | a, b, n) p(a)p(b)p(n).
+\end{equation}
+The vertical action-age relation, $A = \alpha (\sigma_{Jz}^2)^\beta$,
+also has free parameters that must be calibrated using observations.
+These free parameters, $\alpha$ and $\beta$ can again be calibrated via
+\begin{equation}
+    p(\alpha, \beta | \{A\}, \{J_z\}) \propto p(\{A\}, \{J_z\} | \alpha,
+    \beta) p(\alpha, \beta).
+\end{equation}
 
+The unique aspect of our analysis is to combine inference over ages with
+calibration of the free parameters in the gyrochronology and vertical
+action-age relations:
+\begin{eqnarray}
+    &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
+    \{M_V\}, \{M_J\}, \{M_K\}, \{P_{rot}\}, \{B-V\}, \{J_z\}) \\ \nonumber
+    \propto &&p(\{M_v\}, \{M_J\}, \{M_K\}, \{P_{rot}\},
+    \{B-V\}, \{J_z\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n,
+    \alpha, \beta) \\ \nonumber
+    &&p(A, M, [Fe/H], D, A_v, a, b, n, \alpha, \beta).
+\end{eqnarray}
+We can use conditional independence to break this down further into the
+following:
+\begin{eqnarray}
+    &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
+    M_V, M_J, M_K,
+    \{P_{rot}\}, \{B-V\}, \{J_z\}) \\  \nonumber
+    \propto &&p(\{M_v\}, \{M_J\}, \{M_K\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\},
+    \{A_v\})
+    p(A)p(M)p([Fe/H])p(D)p(A_v) \\ \nonumber
+    &&p(\{P_{rot}\}, \{B-V\}, a, b, n | A)p(a)p(b)p(n) \\ \nonumber
+    &&p(\{J_z\}, \alpha, \beta | \{A\}) p(\alpha)p(\beta).
+\end{eqnarray}
+In other words
+\begin{eqnarray}
+    &&p(\mathrm{Ages~\&~other~parameters}|\mathrm{observables}) \\
+    \propto &&\mathcal{L}_{\mathrm{isochronal~age}} \times
+    \mathcal{L}_{\mathrm{gyro~age}} \times
+    \mathcal{L}_{\mathrm{kinematic~age}} \\
+    && \times p(\mathrm{Ages~\&~other~parameters})
+\end{eqnarray}.
+We can multiply the likelihoods together by making the assumption that the
+probabilities are conditionally independent, \ie\ a gyrochronology age depends
+only on rotation period and colour, not proper motion, for example.
+% In reality this assumption is not valid because gyrochronology ages do depend
+% on \logg, \teff\ and \feh.
 
-this is esentially an extension of the period bimodality work (if it's an age effect), but to create a detailed map of the ages of these field stars at a range of galactic latitudes in the 17 pencil-beams available from K2. combining with the periods from Kepler, will be even better. ultimately we'd like to compare to the age distributions in simulations of these fields from TRILEGAL, and from other age indicators (asteroseismology, flare ages, etc)
-
-
-
-{\bf RUTH: fill out info from your in-prep Chronometer paper?}
-
+This is esentially an extension of the period bimodality work (if it's an age
+effect), but to create a detailed map of the ages of these field stars at a
+range of galactic latitudes in the 17 pencil-beams available from K2.
+combining with the periods from Kepler, will be even better.
+Ultimately we'd like to compare to the age distributions in simulations of
+these fields from TRILEGAL, and from other age indicators (asteroseismology,
+flare ages, etc).
 
 %%%%%%%%%%%%%%%%%%%
 \section{Team Qualifications}
