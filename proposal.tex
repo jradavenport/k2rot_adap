@@ -361,11 +361,12 @@ age-rotation relation and a age-velocity dispersion relation to stars with
 photometric colors, rotation periods and Gaia proper motions.
 It combines the information available from these three dating techniques, thus
 providing more accurate ages than any one of the techniques alone.
-Of course, this relies on the rotational and kinematic age relations being
-correct.
 
+The accuracy of ages calculated with {\tt chronometer} still relies on the
+rotational and kinematic age relations being correct.
 As discussed above, the performance of the age-rotation relations for old
-stars is questionable.
+stars has been called into question in the last few years \citep{Angus2015,
+Vansaders2016, Metcalfe2016}.
 A simple straight-line model for rotational age does not reproduce the ages
 predicted by asteroseismology for stars older than the Sun.
 This phenomenon is attributed to a transitioning magnetic dynamo at a critical
@@ -375,45 +376,51 @@ magnetic braking switches off: stars maintain their rotation period from that
 point onward.
 This restricts the applicability of gyrochronology to young, rapidly rotating
 stars.
-This hypothesis is supported by the data, however the data are spars~---~this
-analysis was conducted on the small number of Main sequence, Solar-like
-oscillators observed by Kepler in short cadence mode with detectable rotation
-periods: a sample size of around 26.
-Furthermore, asteroseismology favors stars with low surface gravities since
-these stars show the largest amplitudes of oscillation and the majority of the
-stars in this sample were slightly evolved.
+This hypothesis is supported by the existing data, however these data are
+sparse~---~the analyses demonstrating the discrepancies were conducted on the
+small number of main sequence, Solar-like oscillators observed by Kepler in
+short cadence mode with detectable rotation periods: a sample size of around
+20 \racomment{Ruth - check this number}.
+% Furthermore, asteroseismology favors stars with low surface gravities since
+% they show the largest amplitudes of oscillation and the majority of stars in
+% this sample were slightly evolved.
 A larger sample of old main sequence stars with precise ages is required to
-confirm and further characterise the Rossby saturation mechanism currently
-supported by the Kepler data but of course old main sequence stars are
-difficult to age-date with any other method.
+confirm and further characterize the Rossby saturation mechanism introduced by
+\citep{Vansaders2016} which is currently supported by the Kepler data.
+However, old main sequence stars are difficult to age-date with any other
+method than asteroseismology.
 We propose use the age gradients in the kinematic properties of stars to
 confirm the Rossby saturation effect.
 
-The age-velocity dispersion relations are relatively well studied and simple.
-The current picture of the formation history of stars in the Milky Way is that
-they are formed in the thin disc with relatively small vertical velocities and
-actions.
-As time passes these stars encounter more scattering events~---~close
-encounters with other stars, and/or interactions with galactic spiral arms.
-With each of these interactions the star's orbit in the Milky Way is excited.
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
 This results in a slow heating of stellar orbits.
-Old stars reside in the thick disc of the Milky Way~---~a disc that extends
-out of the plane of the galaxy.
-These stars can be identified in Gaia DR1 by converting their proper motions,
-positions and parallaxes into vertical actions by integrating their orbits in
-the potential of the Milky Way.
-Larger vertical actions (larger angular momenta in the vertical direction)
-correspond to older stars.
-Truely the {\it dispersion} in vertical action is a much better tracer of age
-than vertical action itself but for single stars, only the individual vertical
-action, or $J_z^2$ is available.
-Nonetheless, $J_z^2$ still increases over time, it just provides a relatively
-weak constraint on age.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
 
 A simple test will allow us to distinguish between two magnetic braking
 scenarios in MS stars: the continuous scenario in which stars begin magnetic
-braking at zero-age main sequence and the transition scenario in which stars
-stop braking at a critical Rossby number.
+braking at zero-age main sequence and continue until main sequence turn off,
+and the transition scenario in which stars stop braking at a critical Rossby
+number.
 This test involves computing rotation-based ages for stars observed by both
 Kepler and Gaia.
 Each star will have ages computed using the continuous scenario and the
@@ -421,7 +428,7 @@ transition scenario.
 The vertical action dispersion will then be calculated for groups of stars
 with similar rotational age, producing two vertical action-age relations.
 The vertical action dispersion will also be calculated for red giants observed
-by APOGEE with ages from the Cannon \citep{Ness2015}, also observed by Gaia.
+by APOGEE with ages from the Cannon \citep{Ness2015}, observed by Gaia.
 This red giant vertical action-age relation will serve as our "ground truth"
 since these ages are relatively robust and well calibrated with asteroseismic
 giants.
