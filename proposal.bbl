@@ -147,6 +147,10 @@
   {Aigrain}}]{mcquillan2014}
 {McQuillan}, A., {Mazeh}, T., \& {Aigrain}, S. 2014, \apjs, 211, 24
 
+\bibitem[{{Pace} {et~al.}(2009){Pace}, {Melendez}, {Pasquini}, {Carraro},
+  {Danziger}, {Fran{\c c}ois}, {Matteucci}, \& {Santos}}]{pace2009}
+{Pace}, G., {Melendez}, J., {Pasquini}, L., {et~al.} 2009, \aap, 499, L9
+
 \bibitem[{{Perryman} {et~al.}(2001){Perryman}, {de Boer}, {Gilmore}, {H{\o}g},
   {Lattanzi}, {Lindegren}, {Luri}, {Mignard}, {Pace}, \& {de
   Zeeuw}}]{perryman2001}
@@ -177,5 +181,8 @@
   {Wittenmyer}, \& {Wright}}]{Vanderburg2015}
 {Vanderburg}, A., {Johnson}, J.~A., {Rappaport}, S., {et~al.} 2015, \nat, 526,
   546
+
+\bibitem[{{Vaughan} \& {Preston}(1980)}]{vaughan1980}
+{Vaughan}, A.~H., \& {Preston}, G.~W. 1980, \pasp, 92, 385
 
 \end{thebibliography}
