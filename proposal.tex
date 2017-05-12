@@ -442,66 +442,76 @@ This test will allow us to select an appropriate age rotation relation to be
 used in {\tt chronometer}, our new age-dating method for MS stars.
 {\tt chronometer} combines the following dating methods: gyrochronology,
 isochrone fitting, asteroseismology and galactic kinematics into one model by
-simply summing the log-likelihoods of the three different models.
+jointly inferring the parameters of the three different models.
 In classical isochrone fitting, one might calculate the probability of age
 $A$, mass $M$, \feh, distance $D$ and extinction \av, given a set of
 apparent magnitudes in different filters, \eg\ $M_V$, $M_J$ and $M_K$.
-This can be written
-\begin{eqnarray}
-    &&p(A, M, [Fe/H], D, A_v | M_V, M_J, M_K) \\ \nonumber
-    \propto &&p(M_v, M_J, M_K | A, M, [Fe/H], D, A_v) \\ \nonumber
-    &&p(A)p(M)p([Fe/H])p(D)p(A_v).
-\end{eqnarray}
+% This can be written
+% \begin{eqnarray}
+%     &&p(A, M, [Fe/H], D, A_v | M_V, M_J, M_K) \\ \nonumber
+%     \propto &&p(M_v, M_J, M_K | A, M, [Fe/H], D, A_v) \\ \nonumber
+%     &&p(A)p(M)p([Fe/H])p(D)p(A_v).
+% \end{eqnarray}
 There are no free parameters in the model here --- the model is entirely
 determined by physics and does not need to be calibrated further.
+A suitable set of stellar evolution models would be selected for the
+inference, for example the Dartmouth models
+\racomment{Ruth: add citation}.
 Similarly, in classical gyrochronology, one might calculate the probability of
 age given rotation period and $B-V$ colour,
-\begin{equation}
-    p(A | P_{rot}, B-V) \propto p(P_{rot}, B-V | A)p(A)
-\end{equation}
-In a gyrochronology model however our understanding of the physics is
+% \begin{equation}
+%     p(A | P_{rot}, B-V) \propto p(P_{rot}, B-V | A)p(A)
+% \end{equation}
+In a gyrochronology model however, our understanding of the physics is
 incomplete and some free parameters must be calibrated.
 In the \citet{Barnes2003} gyrochronology parameterisation, $A =
 P_{\mathrm{rot}}^{1/n} - (B-V-0.4)^{b/n}$, these free parameters are $a$, $b$
 and $n$.
 During a calibration exercise, the observables, $A$, $P_{rot}$ and $B-V$ will
-be known and the parameters, $a$, $b$ and $n$ will be inferred,
-\begin{equation}
-    p(a, b, n | \{A\}, \{P_{rot}\}, \{B-V\}) \propto \{p(A\}, \{P_{rot}\},
-    \{B-V\} | a, b, n) p(a)p(b)p(n).
-\end{equation}
-The vertical action-age relation, $A = \alpha (\sigma_{Jz}^2)^\beta$,
-also has free parameters that must be calibrated using observations.
-These free parameters, $\alpha$ and $\beta$ can again be calibrated via
-\begin{equation}
-    p(\alpha, \beta | \{A\}, \{J_z\}) \propto p(\{A\}, \{J_z\} | \alpha,
-    \beta) p(\alpha, \beta).
-\end{equation}
+be known and the parameters, $a$, $b$ and $n$ will be inferred.
+% \begin{equation}
+%     p(a, b, n | \{A\}, \{P_{rot}\}, \{B-V\}) \propto \{p(A\}, \{P_{rot}\},
+%     \{B-V\} | a, b, n) p(a)p(b)p(n).
+% \end{equation}
+The age-velocity dispersion relation also has free parameters that must be
+calibrated using observations, for example the coefficient of increasing
+dispersion.
 
 The unique aspect of our analysis is to combine inference over ages with
 calibration of the free parameters in the gyrochronology and vertical
-action-age relations:
-\begin{eqnarray}
-    &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
-    \{M_V\}, \{M_J\}, \{M_K\}, \{P_{rot}\}, \{B-V\}, \{J_z\}) \\ \nonumber
-    \propto &&p(\{M_v\}, \{M_J\}, \{M_K\}, \{P_{rot}\},
-    \{B-V\}, \{J_z\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n,
-    \alpha, \beta) \\ \nonumber
-    &&p(A, M, [Fe/H], D, A_v, a, b, n, \alpha, \beta).
-\end{eqnarray}
-We can use conditional independence to break this down further into the
-following:
-\begin{eqnarray}
-    &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
-    M_V, M_J, M_K,
-    \{P_{rot}\}, \{B-V\}, \{J_z\}) \\  \nonumber
-    \propto &&p(\{M_v\}, \{M_J\}, \{M_K\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\},
-    \{A_v\})
-    p(A)p(M)p([Fe/H])p(D)p(A_v) \\ \nonumber
-    &&p(\{P_{rot}\}, \{B-V\}, a, b, n | A)p(a)p(b)p(n) \\ \nonumber
-    &&p(\{J_z\}, \alpha, \beta | \{A\}) p(\alpha)p(\beta).
-\end{eqnarray}
-In other words
+action-age relations.
+The global parameters, the parameters of the gyrochronology relation and the
+age-velocity dispersion relation will be inferred separately from the
+individual parameters of each star.
+This inference problem involves a lot of free parameters: at least four global
+parameters and five parameters per star.
+Inferring the ages of one thousand stars will require sampling the posterior
+probability density functions of five thousand and four parameters.
+% \begin{eqnarray}
+%     &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
+%     \{M_V\}, \{M_J\}, \{M_K\}, \{P_{rot}\}, \{B-V\}, \{J_z\}) \\ \nonumber
+%     \propto &&p(\{M_v\}, \{M_J\}, \{M_K\}, \{P_{rot}\},
+%     \{B-V\}, \{J_z\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n,
+%     \alpha, \beta) \\ \nonumber
+%     &&p(A, M, [Fe/H], D, A_v, a, b, n, \alpha, \beta).
+% \end{eqnarray}
+This sounds like a large number but we can use conditional independence to
+break this problem down and apply Gibbs sampling to increase tractability.
+This means we will only explore the PDFs of a maximum of five parameters at a
+time.
+% down further into the
+% following:
+% \begin{eqnarray}
+%     &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
+%     M_V, M_J, M_K,
+%     \{P_{rot}\}, \{B-V\}, \{J_z\}) \\  \nonumber
+%     \propto &&p(\{M_v\}, \{M_J\}, \{M_K\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\},
+%     \{A_v\})
+%     p(A)p(M)p([Fe/H])p(D)p(A_v) \\ \nonumber
+%     &&p(\{P_{rot}\}, \{B-V\}, a, b, n | A)p(a)p(b)p(n) \\ \nonumber
+%     &&p(\{J_z\}, \alpha, \beta | \{A\}) p(\alpha)p(\beta).
+% \end{eqnarray}
+Informally, the structure of this inference procedure can be written as
 \begin{eqnarray}
     &&p(\mathrm{Ages~\&~other~parameters}|\mathrm{observables}) \\
     \propto &&\mathcal{L}_{\mathrm{isochronal~age}} \times
@@ -509,9 +519,9 @@ In other words
     \mathcal{L}_{\mathrm{kinematic~age}} \\
     && \times p(\mathrm{Ages~\&~other~parameters})
 \end{eqnarray}.
-We can multiply the likelihoods together by making the assumption that the
-probabilities are conditionally independent, \ie\ a gyrochronology age depends
-only on rotation period and colour, not proper motion, for example.
+% We can multiply the likelihoods together by making the assumption that the
+% probabilities are conditionally independent, \ie\ a gyrochronology age depends
+% only on rotation period and colour, not proper motion, for example.
 % In reality this assumption is not valid because gyrochronology ages do depend
 % on \logg, \teff\ and \feh.
 
@@ -522,7 +532,6 @@ combining with the periods from Kepler, will be even better.
 Ultimately we'd like to compare to the age distributions in simulations of
 these fields from TRILEGAL, and from other age indicators (asteroseismology,
 flare ages, etc).
-
 
 %%%%%%%%%%%%%%%%%%%
 \section{Team Qualifications}
@@ -559,4 +568,148 @@ history of MWY, age of planet systems, TESS
 
 
 \end{document}
+
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
+This results in a slow heating of stellar orbits.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
+
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
+This results in a slow heating of stellar orbits.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
+
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
+This results in a slow heating of stellar orbits.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
+
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
+This results in a slow heating of stellar orbits.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
+
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
+This results in a slow heating of stellar orbits.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
+
+The age-velocity dispersion relations are relatively well studied and based on
+simple physics.
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\racomment{add citations}.
+As time passes these stars are scattered via close encounters with other
+stars and interactions with galactic spiral arms.
+The more time passes, the more scattering events, and stars slowly accumulate
+angular momentum in the vertical direction, known as vertical action.
+This results in a slow heating of stellar orbits.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical actions.
+It is the {\it dispersion} in vertical action that truly traces age, far
+better than vertical action itself.
+However for single stars only the individual's vertical action is available.
+Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
+tracer of age.
+When studying populations of stars, the vertical action dispersion can be used
+to infer their age relatively precisely (to within 2 Gyr
+\racomment{Ruth, check this}).
+However for single stars vertical action can only constrain ages to within 4
+Gyr.
 
