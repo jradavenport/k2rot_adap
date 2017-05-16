@@ -325,12 +325,11 @@ which pipeline best preserves signal on long timescales.
 % The \ktwosc\ pipeline removes instrumental systematics using a non-parametric
 % approach: a Gaussian process is used to model the instrumental systematics,
 % astrophysical variability and white noise in each light curve.
-All three of these pipelines are optimized for planet search, however the
-\citet{aigrain2016} light curves are designed to preserve stellar variability
-as much as possible.
-We expect to find that these light curves preserve rotation signals on the
-longest timescales.
-
+% All three of these pipelines are optimized for planet search, however the
+% \citet{aigrain2016} light curves are designed to preserve stellar variability
+% as much as possible.
+% We expect to find that these light curves preserve rotation signals on the
+% longest timescales.
 
 Once establishing the best detrending method for preserving stellar
 variability, we will download all the available light curves and, if
@@ -342,8 +341,9 @@ model constructed from 150 principle components derived from a PCA of the
 entire set of \ktwo\ light curves for a given campaign.
 Although developed for asteroseismology, this algorithm may also be applicable
 to rotation period analysis, however at the longer timescales of variation
-produced by stellar rotation, it is likely that the results will suffer
-from overfitting.
+produced by stellar rotation, it is likely that the results will suffer from
+overfitting and will revert to standard Lomb-Scargle periodogram methods in
+this case.
 
 We will use a combination of Lomb-Scargle and autocorrelation function
 techniques to produce a quick catalogue for early analysis.
@@ -378,19 +378,20 @@ eclipsing binaries, planet transit or flares that may distort the rotation
 period signal.
 We will make use of exoplanet and binary catalogs to identify planet transits
 and eclipses.
-We will apply the flare detection algorithm {\tt appaloosa}, built by PI Davenport,
-to identify and remove flares.
+We will apply the flare detection algorithm {\tt appaloosa}, built by PI
+Davenport, to identify and remove flares.
 It may still be necessary to apply a low-pass filter to the data in order to
 remove high frequency features that we miss.
 Fortunately, most of the stellar rotation signals of interest for this study
 have timescales longer than around a day and will be relatively unaffected by
 a low-pass filtering algorithm.
 
-The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield
-of $\sim25\%$ of stars had measurable rotation periods using the
-Autocorrelation Function. From our sample of nearly 300,000 available K2 targets, we
-expect to recover over 70,000 new periods, bringing the total
-\Kepler/K2 sample to $\sim$100,000 stars with measured rotation periods.
+% The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield
+% of $\sim25\%$ of stars had measurable rotation periods using the
+% Autocorrelation Function.
+From our sample of nearly 300,000 available K2 targets, we expect to recover
+over 70,000 new periods, bringing the total \Kepler/K2 sample to $\sim$100,000
+stars with measured rotation periods.
 
 We have already measured a number of \ktwo\ rotation periods using an
 autocorrelation function approach.
