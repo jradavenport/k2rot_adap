@@ -71,11 +71,11 @@ which slows the star's rotation over cosmic time.
 This rotation-based ``clock'' is known as {\it gyrochronology}.
 Cool spots on the star's surface rotate in-to and out-of view, creating small
 amplitude ($\sim$1\%) quasi-periodic changes in the stellar brightness.
-While rotation periods have previously been %laboriously 
+While rotation periods have previously been %laboriously
 measured from
 starspot-induced flux modulations for hundreds of stars from the ground,
 space-based photometric surveys have opened the door to homogeneous ensemble
-measures of stellar rotation, and therefore age. 
+measures of stellar rotation, and therefore age.
 {\bf With precise, long-duration light curves available from the \Kepler/K2
 mission, we can determine rotation periods and ages for nearly 100,000
 main sequence field stars.}
@@ -391,17 +391,30 @@ From our sample of nearly 300,000 available K2 targets, we expect to recover
 over 70,000 new periods, bringing the total \Kepler/K2 sample to $\sim$100,000
 stars with measured rotation periods.
 
-We have already measured a number of \ktwo\ rotation periods using an
+We have already measured a number of K2 rotation periods using a simple
 autocorrelation function approach.
+Figure \ref{fig:kalesalad} shows stars observed by K2 during campaign 4,
+plotted according to their RA and dec and colored by their rotation period.
+To measure the rotation periods shown here we downloaded a
+{\tt everest} \citep{luger2016} light curve for every star and computed an
+autocorrelation function (ACF) of each light curve.
+We smoothed the ACFs and adopted the lag of the highest peak as the dominant
+period in the time series.
+Due to the simplicity of the period extraction technique and the fact that we
+have taken each period measurement at face value with no attempt to remove
+astrophysical contaminants, figure \ref{fig:kalesalad} is a {\it very}
+preliminary look at rotation and other stellar variability in one of the K2
+fields.
 
-% \begin{figure}[!th]
-% \centering
-% \includegraphics[width=4in]{angus2016_fig6.png}
-% \caption{
-% figure 6 from \citet{angus2016}, showing the processing of the light curve and resulting SIPeriodogram. more simple methods give erroneous periods for this object of either 3 days via ACF, or 59 days via normal Lomb-Scargle methods.
-% }
-% \label{fig:sip}
-% \end{figure}
+\begin{figure}[!th]
+\centering
+\includegraphics[width=4in]{ra_vs_dec_period_c04.png}
+\caption{All stars observed during K2 campaign 4, plotted according to their
+    equatorial coordinates and colored by their preliminary rotation period.
+These rotation periods were measured using a very simple ACF method, applied
+    to {\tt everest} \citep{Luger2015} light curves.}
+\label{fig:kalesalad}
+\end{figure}
 
 
 
