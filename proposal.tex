@@ -571,6 +571,9 @@ It combines the information available from these three dating techniques, thus
 providing more accurate ages than any one of the techniques alone.
 Figure \ref{fig:chrono} demonstrates how combining multiple dating methods can
 improve both the precision and accuracy of an age measurement.
+% {\tt chronometer} combines gyrochronology, stellar evolutionary tracks,
+% asteroseismology and galactic kinematics by jointly inferring the parameters
+% of the three different models.
 
 \begin{figure}[!ht]
 \centering
@@ -593,24 +596,20 @@ improve both the precision and accuracy of an age measurement.
 \label{fig:chrono}
 \end{figure}
 
-{\tt chronometer} combines gyrochronology, stellar evolutionary tracks,
-asteroseismology and galactic kinematics by jointly inferring the parameters
-of the three different models.
-
-The unique aspect of our analysis is to combine inference over ages with
-calibration of the free parameters in the gyrochronology and vertical
-action-age relations.
-The global parameters, the parameters of the gyrochronology relation and the
-age-velocity dispersion relation will be inferred separately from the
-individual parameters of each star.
-This analysis involves a large number of free parameters: several global
-parameters and five individual parameters per star.
-Inferring the ages of one thousand stars will require sampling the posterior
-probability density functions of five thousand and four parameters.
-This sounds like a large number but we can use conditional independence to
-break this problem down and apply Gibbs sampling to increase tractability.
-This means we will only explore the PDFs of a maximum of five parameters at a
-time.
+% The unique aspect of our analysis is to combine inference over ages with
+% calibration of the free parameters in the gyrochronology and vertical
+% action-age relations.
+% The global parameters, the parameters of the gyrochronology relation and the
+% age-velocity dispersion relation will be inferred separately from the
+% individual parameters of each star.
+% This analysis involves a large number of free parameters: several global
+% parameters and five individual parameters per star.
+% Inferring the ages of one thousand stars will require sampling the posterior
+% probability density functions of five thousand and four parameters.
+% This sounds like a large number but we can use conditional independence to
+% break this problem down and apply Gibbs sampling to increase tractability.
+% This means we will only explore the PDFs of a maximum of five parameters at a
+% time.
 
 % In classical isochrone fitting, one might calculate the probability of age
 % $A$, mass $M$, \feh, distance $D$ and extinction \av, given a set of
