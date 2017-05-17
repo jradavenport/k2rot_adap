@@ -435,37 +435,16 @@ To determine which formation mechanism gives rise to the bimodal period distribu
 Since the K2 campaign fields are spread across the entire ecliptic plane, rotation period data from fields with similar galactic latitudes can be combined to improve the sample size when searching for the bimodality as a function of distance. For example, C1, C3, C10, and C12 are near the North and South Galactic Caps, while C2, C7, and C13 straddle the Galactic Plane. The size scale over which the Milky Way's star formation history varies is unknown. In Andromeda significant variations in star formation histories are seen between 100 pc volumes, as well as large galaxy-wide trends \citep[e.g.][]{lewis2015}. We will therefore conduct our search for the period bimodality as a function of distance in each \Kepler/K2 pointing separately, as well in bins of galactic latitude.
 
 
-We will measure the strength of the bimodal feature by examining the period distribution centered around a 600 Myr gyrochrone, as in Figure \ref{fig:cmd}. By fitting multiple Gaussians to the period distribution in each bin of galactic latitude and distance, we can empirically determine the significance of the bimodality. The Bayesian Information Criterion allows us to analytically determine if one or two (or more) Gaussian curves best represent the rotation distribution in each spatial bin.
- If the bimodality is due to a localized age distribution of stars, we expect the feature will disappear in this space as we go to further distances and sample different star formation histories. Other period bimodalities may be present, given different star formation histories, but will not align to the 600 Myr gyrochrone. However if the bimodality is a generic feature of angular momentum loss, this two-Gaussian fit from \citet{davenport2017} will be preferred for every latitude and distance bin.
+The variation between K2 fields in the rotation period distribution will be most sensitive for the youngest stars, where stellar rotation evolution is most dramatic. If the young stars (short period bump in Figure \ref{fig:cmd}) were formed, for example, due to the passage of a Milky Way spiral arm, we would expect a shift in the peak of the rapid rotation distribution between fields ahead and behind the Sun along the direction of our Galactic orbit. Assuming a spiral arm pattern speed of $\Omega_{sp}= 25$ km s$^{-1}$ kpc$^{-1}$ \citep{dias2005,gerhard2011}, rapidly rotating stars at a distance of 1 kpc in opposing fields could have an age offset of $\sim$100 Myr, which should be detectable given a 10-20\% per-star age resolution for gyrochronology.
 
 
+We will measure the strength of the bimodal feature by examining the period distribution centered around a 600 Myr gyrochrone, as in Figure \ref{fig:cmd}. By fitting multiple Gaussians to the period distribution in each bin of galactic latitude and distance, we can empirically determine the significance of the bimodality. The Bayesian Information Criterion allows us to analytically determine if one or two (or more) Gaussian curves best represent the rotation distribution in each spatial bin. If the bimodality is a generic feature of angular momentum loss evolution, this two-Gaussian fit from \citet{davenport2017} will be preferred for every latitude and distance bin. If the bimodality is due to a localized age distribution of stars, we expect the feature will disappear or shift as we go to further distances and sample different star formation histories. %Other period bimodalities may be present given different star formation histories, but will not align to the 600 Myr gyrochrone. 
 
 
 
 
 %%%%%%%%%
 \subsection{Mapping Ages in each Field}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=4in]{all_hist_working.png}
-\caption{A preliminary demonstration of the power of rotation for age
-    inference, created using {\tt chronometer}.
-    The palest gray histogram shows the probability distribution over ages
-    obtained for the Sun at 10 parsecs using only J, H and K band colors.
-    The darker gray histogram shows the age posterior for the Sun at 10
-    parsecs using colors and spectroscopic information ($T_{\mathrm{eff}}$,
-    $\log(g)$ and $[Fe/H]$).
-    The darkest gray histogram shows the age posterior when colors,
-    spectroscopic information and a rotation period used to infer the age of
-    the Sun at 10 parsecs.
-    This is a preliminary plot with no kinematic information and just three
-    stars.
-    The final model will contain several thousand stars and kinematic
-    information so will be even more powerful than this.
-}
-\label{fig:chrono}
-\end{figure}
 
 Combining our catalog of rotation periods from K2 with the existing rotation
 catalogs from Kepler will produce the largest set of rotation periods
@@ -510,6 +489,30 @@ However, old main sequence stars are difficult to age-date with any other
 method than asteroseismology.
 We propose use the age gradients in the kinematic properties of stars to
 confirm the Rossby saturation effect.
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=4in]{all_hist_working.png}
+\caption{A preliminary demonstration of the power of rotation for age
+    inference, created using {\tt chronometer}.
+    The palest gray histogram shows the probability distribution over ages
+    obtained for the Sun at 10 parsecs using only J, H and K band colors.
+    The darker gray histogram shows the age posterior for the Sun at 10
+    parsecs using colors and spectroscopic information ($T_{\mathrm{eff}}$,
+    $\log(g)$ and $[Fe/H]$).
+    The darkest gray histogram shows the age posterior when colors,
+    spectroscopic information and a rotation period used to infer the age of
+    the Sun at 10 parsecs.
+    This is a preliminary plot with no kinematic information and just three
+    stars.
+    The final model will contain several thousand stars and kinematic
+    information so will be even more powerful than this.
+}
+\label{fig:chrono}
+\end{figure}
+
+
 
 The age-velocity dispersion relations are relatively well studied and based on
 simple physics.
