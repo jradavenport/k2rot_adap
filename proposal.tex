@@ -163,9 +163,9 @@ However, rotation velocities for Solar-type stars converge after around 500 Myr 
 evolution \citep{barnes2010}.
 Main sequence stars continuously lose angular momentum due to
 magnetically driven winds \citep{schatzman1962, weber1967, mestel1984,
-kawaler1988, Charbonneau2010}.
+kawaler1988, charbonneau2010}.
 Since stellar rotation also drives the internal magnetic dynamo
-\citep[][]{schatzman1962, Parker1970}, the result of this angular momentum
+\citep[][]{schatzman1962, parker1970}, the result of this angular momentum
 loss is decreasing surface magnetic activity as the star slows.
 Older, slower rotating stars therefore have smaller starspots, making the
 detection of their rotation more difficult as stars age.
@@ -412,7 +412,7 @@ fields.
 \caption{All stars observed during K2 campaign 4, plotted according to their
     equatorial coordinates and colored by their preliminary rotation period.
 These rotation periods were measured using a very simple ACF method, applied
-    to {\tt everest} \citep{Luger2015} light curves.}
+    to {\tt everest} \citep{luger2015} light curves.}
 \label{fig:kalesalad}
 \end{figure}
 
@@ -483,6 +483,9 @@ We will measure the strength of the bimodal feature by examining the period dist
 Combining our catalog of rotation periods from K2 with the existing rotation
 catalogs from Kepler will produce the largest set of rotation periods
 currently available.
+Using gyrochronology and other dating methods, we may be able to transform
+these rotation periods into ages.
+
 Using a new technique being developed by CoI Angus, {\tt chronometer}, we
 will produce an improved age estimate for every star based on rotation values,
 photometric colors and galactic kinematics from Gaia proper motions.
@@ -502,7 +505,7 @@ stars has been called into question in the last few years \citep{angus2015,van-s
 A simple straight-line model for rotational age does not reproduce the ages
 predicted by asteroseismology for stars older than the Sun.
 This phenomenon is attributed to a transitioning magnetic dynamo at a critical
-Rossby number, $Ro$, of 2.6, the solar value \citep{van-saders2016}.
+Rossby number, $Ro$, of around 2.2, the solar value \citep{van-saders2016}.
 As rotation periods slow, $Ro$ decreases until it hits the critical value and
 magnetic braking switches off: stars maintain their rotation period from that
 point onward.
@@ -512,13 +515,13 @@ This hypothesis is supported by the existing data, however these data are
 sparse~---~the analyses demonstrating the discrepancies were conducted on the
 small number of main sequence, Solar-like oscillators observed by Kepler in
 short cadence mode with detectable rotation periods: a sample size of around
-20 {\bf Ruth - check this number}.
+20.
 % Furthermore, asteroseismology favors stars with low surface gravities since
 % they show the largest amplitudes of oscillation and the majority of stars in
 % this sample were slightly evolved.
 A larger sample of old main sequence stars with precise ages is required to
 confirm and further characterize the Rossby saturation mechanism introduced by
-\citep{van-saders2016} which is currently supported by the Kepler data.
+\citep{van-saders2016}.
 However, old main sequence stars are difficult to age-date with any other
 method than asteroseismology.
 We propose use the age gradients in the kinematic properties of stars to
@@ -671,7 +674,15 @@ PI Davenport has used \Kepler to conduct the largest survey to-date of stellar a
 Davenport previously collaborated on NASA ADP grant NNX09AC77G to characterize NIR variability using the 2MASS Calibration Scan Point Source Working Database \citep{davenport2012,davenport2015a}.
 He has mentored numerous students on projects using \Kepler data, resulting in student-led publications such as the flare activity of a unique M dwarf binary system GJ 1245AB \citep{lurie2015}, and exploring the poorly understood origins of wide binary stars through stellar rotation (R. Clarke in prep). He will manage the overall project, detect and remove short period variability from flares in the light curves, supervise the initial periodic signal detection using Lomb-Scargle methods, and lead the investigation and publication on the nature of the bimodal period distribution.
 
-Co-I Angus is an expert in the extraction of periodic signals from \Kepler data using Gaussian Processes \citep{angus2016c} and other cutting-edge statistical techniques. She is the author of tools for generating Systematics-Insensitive Periodograms for both \Kepler and K2 data \citep{angus2016}, as well as new gyrochronology calibrations using \Kepler asteroseismic targets \citep{angus2015}. She will lead the effort to measure and publish the catalog of rotation periods for all K2 sources, and guide students in measuring ages for field stars using the {\tt chronometer} Python code.
+Co-I Angus is an expert in the extraction of periodic signals from \Kepler
+data using Gaussian Processes \citep{angus2016c} and other cutting-edge
+statistical techniques.
+She is the author of tools for generating Systematics-Insensitive Periodograms
+for K2 data \citep{angus2016}, as well as new gyrochronology calibrations
+using \Kepler asteroseismic targets \citep{angus2015}.
+She will lead the effort to measure and publish the catalog of rotation
+periods for all K2 sources, and measuring ages for field stars using the {\tt
+chronometer} Python code.
 
 Covey
 wrote white paper of stellar age dating techniques  for decadal survey \citep{covey2010white}
