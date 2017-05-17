@@ -451,7 +451,20 @@ Since the K2 campaign fields are spread across the entire ecliptic plane, rotati
 The variation between K2 fields in the rotation period distribution will be most sensitive for the youngest stars, where stellar rotation evolution is most dramatic. If the young stars (short period bump in Figure \ref{fig:cmd}) were formed, for example, due to the passage of a Milky Way spiral arm, we would expect a shift in the peak of the rapid rotation distribution between fields ahead and behind the Sun along the direction of our Galactic orbit. Assuming a spiral arm pattern speed of $\Omega_{sp}= 25$ km s$^{-1}$ kpc$^{-1}$ \citep{dias2005,gerhard2011}, rapidly rotating stars at a distance of 1 kpc in opposing fields could have an age offset of $\sim$100 Myr, which should be detectable given a 10-20\% per-star age resolution for gyrochronology.
 
 
-We will measure the strength of the bimodal feature by examining the period distribution centered around a 600 Myr gyrochrone, as in Figure \ref{fig:cmd}. By fitting multiple Gaussians to the period distribution in each bin of galactic latitude and distance, we can empirically determine the significance of the bimodality. The Bayesian Information Criterion allows us to analytically determine if one or two (or more) Gaussian curves best represent the rotation distribution in each spatial bin. If the bimodality is a generic feature of angular momentum loss evolution, this two-Gaussian fit from \citet{davenport2017} will be preferred for every latitude and distance bin. If the bimodality is due to a localized age distribution of stars, we expect the feature will disappear or shift as we go to further distances and sample different star formation histories. %Other period bimodalities may be present given different star formation histories, but will not align to the 600 Myr gyrochrone. 
+We will measure the strength of the bimodal feature by examining the period
+distribution centered around a 600 Myr gyrochrone, as in Figure \ref{fig:cmd}.
+By fitting multiple Gaussians to the period distribution in each bin of
+galactic latitude and distance, we can empirically determine the significance
+of the bimodality. The Bayesian Information Criterion allows us to
+analytically determine if one or two (or more) Gaussian curves best represent
+the rotation distribution in each spatial bin. If the bimodality is a generic
+feature of angular momentum loss evolution, this two-Gaussian fit from
+\citet{davenport2017} will be preferred for every latitude and distance bin.
+If the bimodality is due to a localized age distribution of stars, we expect
+the feature will disappear or shift as we go to further distances and sample
+different star formation histories. %Other period bimodalities may be present
+given different star formation histories, but will not align to the 600 Myr
+gyrochrone.
 
 
 
@@ -465,36 +478,29 @@ currently available.
 Using gyrochronology and other dating methods, we may be able to transform
 these rotation periods into ages.
 
-Using a new technique being developed by CoI Angus, {\tt chronometer}, we
-will produce an improved age estimate for every star based on rotation values,
-photometric colors and galactic kinematics from Gaia proper motions.
-This age map may be used to infer the age distribution of stars within and
-across K2 fields.
+% Using a new technique being developed by CoI Angus, we will produce an
+% improved age estimate for every star based on rotation values, photometric
+% colors and galactic kinematics from Gaia proper motions.
+% This age map may be used to infer the age distribution of stars within and
+% across K2 fields.
 
-{\tt chronometer} extends isochrone fitting by simultaneously fitting an
-age-rotation relation and a age-velocity dispersion relation to stars with
-photometric colors, rotation periods and Gaia proper motions.
-It combines the information available from these three dating techniques, thus
-providing more accurate ages than any one of the techniques alone.
-
-The accuracy of ages calculated with {\tt chronometer} still relies on the
-rotational and kinematic age relations being correct.
 As discussed above, the performance of the age-rotation relations for old
-stars has been called into question in the last few years \citep{angus2015,van-saders2016, Metcalfe2016}.
+stars has been called into question in the last few years
+\citep{angus2015,van-saders2016, Metcalfe2016}.
 A simple straight-line model for rotational age does not reproduce the ages
 predicted by asteroseismology for stars older than the Sun.
 This phenomenon is attributed to a transitioning magnetic dynamo at a critical
-Rossby number, $Ro$, of around 2.2, the solar value \citep{van-saders2016}.
+Rossby number, $Ro$, of around the solar value \citep{van-saders2016}.
 As rotation periods slow, $Ro$ decreases until it hits the critical value and
 magnetic braking switches off: stars maintain their rotation period from that
 point onward.
-This restricts the applicability of gyrochronology to young, rapidly rotating
-stars.
-This hypothesis is supported by the existing data, however these data are
-sparse~---~the analyses demonstrating the discrepancies were conducted on the
-small number of main sequence, Solar-like oscillators observed by Kepler in
-short cadence mode with detectable rotation periods: a sample size of around
-20.
+This feature of rotational evolution, if accurate, restricts the applicability
+of gyrochronology to young, rapidly rotating stars.
+A transitioning magnetic dynamo is supported by the existing data, however
+these data are sparse~---~the analyses demonstrating the discrepancies were
+conducted on a small number of main sequence, Solar-like oscillators observed
+by Kepler in short cadence mode with detectable rotation periods: a sample
+size of around 20.
 % Furthermore, asteroseismology favors stars with low surface gravities since
 % they show the largest amplitudes of oscillation and the majority of stars in
 % this sample were slightly evolved.
@@ -506,6 +512,65 @@ method than asteroseismology.
 We propose use the age gradients in the kinematic properties of stars to
 confirm the Rossby saturation effect.
 
+There is evidence to suggest that stars in the Milky Way form in the thin disc
+of the galaxy with relatively small vertical velocities and angular momenta
+\citep[\eg][]{carlberg1985, edvardsson1993, freeman2002, bensby2004,
+holmberg2007}.
+These stars are slowly scattered via close encounters with other stars and
+interactions with galactic spiral arms.
+The more time passes, the more scattering events take place, and stars slowly
+accumulate displacement and angular momentum in the z-direction, out of the
+plane of the Milky Way.
+Older stars can be identified in Gaia DR1 by integrating their orbits in the
+potential of the Milky Way to convert their proper motions, positions and
+parallaxes into vertical angular momenta, or actions.
+The {\it dispersion} in vertical action for groups of stars reliably traces
+age: an old population will have a larger dispersion in vertical action than a
+young population.
+Since most \Kepler\ and K2 stars will have positions, parallaxes and proper
+motions measured by Gaia, we can calculate the vertical action dispersion for
+groups of stars with various rotational properties.
+Rapid rotators (young stars) should have smaller vertical action dispersions
+than slow rotators (old stars).
+We will calculate gyrochronological ages for all F, G and K dwarfs with
+rotation periods and test these ages against their predicted kinematic ages.
+In this way we will test the gyrochronology relations and, in particular,
+confirm whether rotation continues to be a good age proxy at late ages, \ie\
+does the \citet{barnes2003} model or a \citet{vansaders2016} model provide a
+better description of the data?
+{\bf We propose to use the relationship between vertical action and age to
+test the gyrochronology relations at late ages.}
+
+The intersection between Gaia and \Kepler/K2 rotators provides another test of
+the age-rotation relations.
+Over 13,000 comoving pairs of stars were identified in the first Gaia data
+release by \citet{Oh2016}.
+Several hundred of these pairs fall in the \Kepler/K2 footprint.
+If these comoving stars are coeval, their rotation periods should predict the
+same gyrochronological age.
+The dispersion in rotational-age, predicted from the rotation periods of
+coeval groups of stars will reveal the fundamental uncertainty in the
+gyrochronology relations.
+We have secured 5 nights on the ModSpec spectrograph on the Hiltner 2.4m
+telescope at MDM observatory, to obtain radial velocities for the comoving
+pair candidates in the \Kepler\ field.
+A previous observing run established that around 80\% of the \citet{Oh2016}
+comoving pairs, identified from 2-dimensional proper motions, have radial
+velocities consistent with being comoving.
+We expect to find this same low false-positive rate for the comoving pair
+candidates in the \Kepler\ field.
+
+Having established whether the \citet{barnes2003} or \citet{vansaders2016}
+model is more appropriate for describing the rotational evolution of stars, we
+will apply a new dating method (called {\tt chronometer}) that combines
+multiple age indicators in order to produce an age map of the K2 sky.
+{\tt chronometer} extends isochrone fitting by simultaneously fitting an
+age-rotation relation and a age-velocity dispersion relation to stars with
+photometric colors, rotation periods and Gaia proper motions.
+It combines the information available from these three dating techniques, thus
+providing more accurate ages than any one of the techniques alone.
+Figure \ref{fig:chrono} demonstrates how combining multiple dating methods can
+improve both the precision and accuracy of an age measurement.
 
 \begin{figure}[!ht]
 \centering
@@ -528,92 +593,9 @@ confirm the Rossby saturation effect.
 \label{fig:chrono}
 \end{figure}
 
-
-
-The age-velocity dispersion relations are relatively well studied and based on
-simple physics.
-There is evidence to suggest that stars in the Milky Way form in the thin disc
-of the galaxy with relatively small vertical velocities and angular momenta
-{\bf add citations}.
-As time passes these stars are scattered via close encounters with other
-stars and interactions with galactic spiral arms.
-The more time passes, the more scattering events, and stars slowly accumulate
-angular momentum in the vertical direction, known as vertical action.
-This results in a slow heating of stellar orbits.
-Older stars can be identified in Gaia DR1 by integrating their orbits in the
-potential of the Milky Way to convert their proper motions, positions and
-parallaxes into vertical actions.
-It is the {\it dispersion} in vertical action that truly traces age, far
-better than vertical action itself.
-However for single stars only the individual's vertical action is available.
-Nonetheless, $J_z^2$ increases over time for any given star, and is a weak
-tracer of age.
-When studying populations of stars, the vertical action dispersion can be used
-to infer their age relatively precisely (to within 2 Gyr
-{\bf Ruth, check this}).
-However for single stars vertical action can only constrain ages to within 4
-Gyr.
-
-A simple test will allow us to distinguish between two magnetic braking
-scenarios in MS stars: the continuous scenario in which stars begin magnetic
-braking at zero-age main sequence and continue until main sequence turn off,
-and the transition scenario in which stars stop braking at a critical Rossby
-number.
-This test involves computing rotation-based ages for stars observed by both
-Kepler and Gaia.
-Each star will have ages computed using the continuous scenario and the
-transition scenario.
-The vertical action dispersion will then be calculated for groups of stars
-with similar rotational age, producing two vertical action-age relations.
-The vertical action dispersion will also be calculated for red giants observed
-by APOGEE with ages from the Cannon \citep{Ness2015}, observed by Gaia.
-This red giant vertical action-age relation will serve as our "ground truth"
-since these ages are relatively robust and well calibrated with asteroseismic
-giants.
-We will compare the both the $\sigma_{J_z}$-age relation for the continuous
-scenario and the $\sigma_{J_z}$-age relation for the transition scenario with
-the red giant $\sigma_{J_z}$-age relation.
-This test will reveal whether continuous magnetic braking or transitional
-magnetic braking provides a better description of the data.
-
-This test will allow us to select an appropriate age rotation relation to be
-used in {\tt chronometer}, our new age-dating method for MS stars.
-{\tt chronometer} combines the following dating methods: gyrochronology,
-isochrone fitting, asteroseismology and galactic kinematics into one model by
-jointly inferring the parameters of the three different models.
-In classical isochrone fitting, one might calculate the probability of age
-$A$, mass $M$, \feh, distance $D$ and extinction \av, given a set of
-apparent magnitudes in different filters, \eg\ $M_V$, $M_J$ and $M_K$.
-% This can be written
-% \begin{eqnarray}
-%     &&p(A, M, [Fe/H], D, A_v | M_V, M_J, M_K) \\ \nonumber
-%     \propto &&p(M_v, M_J, M_K | A, M, [Fe/H], D, A_v) \\ \nonumber
-%     &&p(A)p(M)p([Fe/H])p(D)p(A_v).
-% \end{eqnarray}
-There are no free parameters in the model here --- the model is entirely
-determined by physics and does not need to be calibrated further.
-A suitable set of stellar evolution models would be selected for the
-inference, for example the Dartmouth models
-{\bf Ruth: add citation}.
-Similarly, in classical gyrochronology, one might calculate the probability of
-age given rotation period and $B-V$ colour,
-% \begin{equation}
-%     p(A | P_{rot}, B-V) \propto p(P_{rot}, B-V | A)p(A)
-% \end{equation}
-In a gyrochronology model however, our understanding of the physics is
-incomplete and some free parameters must be calibrated.
-In the \citet{barnes2003} gyrochronology parameterisation, $A =
-P_{\mathrm{rot}}^{1/n} - (B-V-0.4)^{b/n}$, these free parameters are $a$, $b$
-and $n$.
-During a calibration exercise, the observables, $A$, $P_{rot}$ and $B-V$ will
-be known and the parameters, $a$, $b$ and $n$ will be inferred.
-% \begin{equation}
-%     p(a, b, n | \{A\}, \{P_{rot}\}, \{B-V\}) \propto \{p(A\}, \{P_{rot}\},
-%     \{B-V\} | a, b, n) p(a)p(b)p(n).
-% \end{equation}
-The age-velocity dispersion relation also has free parameters that must be
-calibrated using observations, for example the coefficient of increasing
-dispersion.
+{\tt chronometer} combines gyrochronology, stellar evolutionary tracks,
+asteroseismology and galactic kinematics by jointly inferring the parameters
+of the three different models.
 
 The unique aspect of our analysis is to combine inference over ages with
 calibration of the free parameters in the gyrochronology and vertical
@@ -621,22 +603,71 @@ action-age relations.
 The global parameters, the parameters of the gyrochronology relation and the
 age-velocity dispersion relation will be inferred separately from the
 individual parameters of each star.
-This inference problem involves a lot of free parameters: at least four global
-parameters and five parameters per star.
+This analysis involves a large number of free parameters: several global
+parameters and five individual parameters per star.
 Inferring the ages of one thousand stars will require sampling the posterior
 probability density functions of five thousand and four parameters.
-% \begin{eqnarray}
-%     &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
-%     \{M_V\}, \{M_J\}, \{M_K\}, \{P_{rot}\}, \{B-V\}, \{J_z\}) \\ \nonumber
-%     \propto &&p(\{M_v\}, \{M_J\}, \{M_K\}, \{P_{rot}\},
-%     \{B-V\}, \{J_z\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n,
-%     \alpha, \beta) \\ \nonumber
-%     &&p(A, M, [Fe/H], D, A_v, a, b, n, \alpha, \beta).
-% \end{eqnarray}
 This sounds like a large number but we can use conditional independence to
 break this problem down and apply Gibbs sampling to increase tractability.
 This means we will only explore the PDFs of a maximum of five parameters at a
 time.
+
+% In classical isochrone fitting, one might calculate the probability of age
+% $A$, mass $M$, \feh, distance $D$ and extinction \av, given a set of
+% apparent magnitudes in different filters, \eg\ $M_V$, $M_J$ and $M_K$.
+% % This can be written
+% % \begin{eqnarray}
+% %     &&p(A, M, [Fe/H], D, A_v | M_V, M_J, M_K) \\ \nonumber
+% %     \propto &&p(M_v, M_J, M_K | A, M, [Fe/H], D, A_v) \\ \nonumber
+% %     &&p(A)p(M)p([Fe/H])p(D)p(A_v).
+% % \end{eqnarray}
+% There are no free parameters in the model here --- the model is entirely
+% determined by physics and does not need to be calibrated further.
+% A suitable set of stellar evolution models would be selected for the
+% inference, for example the Dartmouth models
+% {\bf Ruth: add citation}.
+% Similarly, in classical gyrochronology, one might calculate the probability of
+% age given rotation period and $B-V$ colour,
+% % \begin{equation}
+% %     p(A | P_{rot}, B-V) \propto p(P_{rot}, B-V | A)p(A)
+% % \end{equation}
+% In a gyrochronology model however, our understanding of the physics is
+% incomplete and some free parameters must be calibrated.
+% In the \citet{barnes2003} gyrochronology parameterisation, $A =
+% P_{\mathrm{rot}}^{1/n} - (B-V-0.4)^{b/n}$, these free parameters are $a$, $b$
+% and $n$.
+% During a calibration exercise, the observables, $A$, $P_{rot}$ and $B-V$ will
+% be known and the parameters, $a$, $b$ and $n$ will be inferred.
+% % \begin{equation}
+% %     p(a, b, n | \{A\}, \{P_{rot}\}, \{B-V\}) \propto \{p(A\}, \{P_{rot}\},
+% %     \{B-V\} | a, b, n) p(a)p(b)p(n).
+% % \end{equation}
+% The age-velocity dispersion relation also has free parameters that must be
+% calibrated using observations, for example the coefficient of increasing
+% dispersion.
+
+% The unique aspect of our analysis is to combine inference over ages with
+% calibration of the free parameters in the gyrochronology and vertical
+% action-age relations.
+% The global parameters, the parameters of the gyrochronology relation and the
+% age-velocity dispersion relation will be inferred separately from the
+% individual parameters of each star.
+% This inference problem involves a lot of free parameters: at least four global
+% parameters and five parameters per star.
+% Inferring the ages of one thousand stars will require sampling the posterior
+% probability density functions of five thousand and four parameters.
+% % \begin{eqnarray}
+% %     &&p(\{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n, \alpha, \beta|
+% %     \{M_V\}, \{M_J\}, \{M_K\}, \{P_{rot}\}, \{B-V\}, \{J_z\}) \\ \nonumber
+% %     \propto &&p(\{M_v\}, \{M_J\}, \{M_K\}, \{P_{rot}\},
+% %     \{B-V\}, \{J_z\} | \{A\}, \{M\}, \{[Fe/H]\}, \{D\}, \{A_v\}, a, b, n,
+% %     \alpha, \beta) \\ \nonumber
+% %     &&p(A, M, [Fe/H], D, A_v, a, b, n, \alpha, \beta).
+% % \end{eqnarray}
+% This sounds like a large number but we can use conditional independence to
+% break this problem down and apply Gibbs sampling to increase tractability.
+% This means we will only explore the PDFs of a maximum of five parameters at a
+% time.
 % down further into the
 % following:
 % \begin{eqnarray}
@@ -649,27 +680,27 @@ time.
 %     &&p(\{P_{rot}\}, \{B-V\}, a, b, n | A)p(a)p(b)p(n) \\ \nonumber
 %     &&p(\{J_z\}, \alpha, \beta | \{A\}) p(\alpha)p(\beta).
 % \end{eqnarray}
-Informally, the structure of this inference procedure can be written as
-\begin{eqnarray}
-    &&p(\mathrm{Ages~\&~other~parameters}|\mathrm{observables}) \\
-    \propto &&\mathcal{L}_{\mathrm{isochronal~age}} \times
-    \mathcal{L}_{\mathrm{gyro~age}} \times
-    \mathcal{L}_{\mathrm{kinematic~age}} \\
-    && \times p(\mathrm{Ages~\&~other~parameters})
-\end{eqnarray}.
+% Informally, the structure of this inference procedure can be written as
+% \begin{eqnarray}
+%     &&p(\mathrm{Ages~\&~other~parameters}|\mathrm{observables}) \\
+%     \propto &&\mathcal{L}_{\mathrm{isochronal~age}} \times
+%     \mathcal{L}_{\mathrm{gyro~age}} \times
+%     \mathcal{L}_{\mathrm{kinematic~age}} \\
+%     && \times p(\mathrm{Ages~\&~other~parameters})
+% \end{eqnarray}.
 % We can multiply the likelihoods together by making the assumption that the
 % probabilities are conditionally independent, \ie\ a gyrochronology age depends
 % only on rotation period and colour, not proper motion, for example.
 % In reality this assumption is not valid because gyrochronology ages do depend
 % on \logg, \teff\ and \feh.
 
-This is essentially an extension of the period bimodality work (if it's an age
-effect), but to create a detailed map of the ages of these field stars at a
-range of galactic latitudes in the 17 pencil-beams available from K2.
-combining with the periods from Kepler, will be even better.
-Ultimately we'd like to compare to the age distributions in simulations of
-these fields from TRILEGAL, and from other age indicators (asteroseismology,
-flare ages, etc).
+% This is essentially an extension of the period bimodality work (if it's an age
+% effect), but to create a detailed map of the ages of these field stars at a
+% range of galactic latitudes in the 17 pencil-beams available from K2.
+% combining with the periods from Kepler, will be even better.
+% Ultimately we'd like to compare to the age distributions in simulations of
+% these fields from TRILEGAL, and from other age indicators (asteroseismology,
+% flare ages, etc).
 
 %%%%%%%%%%%%%%%%%%%
 \section{Team Qualifications}
