@@ -559,9 +559,9 @@ gyrochronology relations. However, explorations of rotating stars in a handful o
 %Having established whether the \citet{barnes2003} or \citet{van-saders2016}
 %model is more appropriate for describing the rotational evolution of stars, we
 
-With improved gyrochronology relations in hand, we
+{\bf With improved gyrochronology relations in hand, we
 will apply a new dating method (called {\tt chronometer}) that combines
-multiple age indicators in order to produce an age map of the K2 sky.
+multiple age indicators in order to produce an age map of the K2 sky.}
 {\tt chronometer} extends isochrone fitting by simultaneously fitting an
 age-rotation relation and an age-velocity dispersion relation to stars with
 photometric colors, rotation periods and Gaia proper motions.
@@ -712,32 +712,29 @@ has developed analytical models for rotational modulations in stellar light curv
 %%%%%%%%%%%%%%%%%%%
 \section{Relevance to NASA Programs}
 This project will create an important value-added dataset for extending the stellar astrophysics legacy of the \Kepler mission with K2 data.
-Calibrating and extending gyrochronology relations for older stars will be critical for  investigations of the star formation history and origin of the Milky Way. Determining precise stellar ages for exoplanet host stars will be required for targeting key planetary systems with JWST. The detailed age--rotation--magnetic activity paradigm is necessary for understanding the habitability and formation of the young Earth--Sun system. The techniques developed for extracting reliable rotation periods from K2 light curves, and ensemble age mapping from stars with rotation periods measured, will be directly applicable to the data available from the TESS mission.
+Calibrating and extending gyrochronology relations for older stars will be critical for  investigations of the star formation history and origin of the Milky Way. Determining precise stellar ages for exoplanet host stars will be required for targeting key planetary systems with JWST. The detailed age--rotation--magnetic activity paradigm is necessary for understanding the habitability and formation of the young Earth--Sun system. The techniques developed for extracting reliable rotation periods from K2 light curves, and ensemble age mapping from stars with rotation periods measured, will be directly applicable to the data available from the TESS mission. The majority of sources observed by TESS will have $\sim$27 day light curves, which is well suited to recovering rotation periods for younger stars. Stars within the continuous viewing zones in TESS (north and south ecliptic poles) will have nearly year-long light curves, and will be ideal for age-dating stars from Myr to several Gyr.
 
 
 %%%%%%%%%%%%%%%%%%%
 \section{Plan of Work}
 
-
-
 \begin{itemize}
-\item {\bf Year 1:} Produce a catalog of K2 rotation periods. Perform exploratory
-analysis of these data, including a search for extended bimodality.
-Produce a newly calibrated relation between rotation and age,
-based on the kinematics of \Kepler and K2 stars with Gaia proper motions and
-parallaxes.
+\item {\bf Year 1:} In early 2018 we will evaluate the various K2 reduction pipelines, produce the quick-look catalog of K2 rotation periods using Lomb-Scargle and ACF methods, and begin generating the Systematics-Insensitive Periodograms. When the Gaia DR2 data is released (scheduled for April 2018), Davenport will take lead on investigating the origin of the rotation period bimodality using our preliminary rotation period catalog. 
+Angus will take lead on adapting the Gaussian Process period finding approach with {\tt celerite} to the K2 data and developing Python scripts for running on the WWU computer cluster. 
+By Summer 2018 Davenport and Covey will advise the undergraduate on deploying our final period-finding algorithm to the computer cluster, and will produce the final rotation period catalog by late 2018. 
+Davenport will update his analysis of the rotation period bimodality using this final catalog.
+Angus will take lead on comparing preliminary gyrochronology ages to kinematic ages using the Gaia DR2 proper motions, and will compare gyrochronology models at older stellar ages.
 \\
-{\bf Milestones:} initial catalog of rotation periods form Lomb-Scargle and
-        ACF techniques.
+{\bf Milestones:} Produce final catalog of rotation periods using multiple algorithms, and exploring various K2 data reduction pipelines. Davenport, assisted by Angus, will write and submit Paper 1: {\it The K2 Rotation Period Catalog}. Davenport will begin analysis and outline for publication on the period bimodality. 
         Establish whether a continuous or transitional gyrochronology model is
         support by kinematic ages of K2 stars.
-        Infer the intrinsic dispersion in the gyrochronology relations, based
-        on the rotation periods of comoving pairs.
-        This will provide an estimate of the typical uncertainties expected
-        for gyrochronology ages.
-        % matched against
+%        Infer the intrinsic dispersion in the gyrochronology relations, based
+%        on the rotation periods of comoving pairs.
+%        This will provide an estimate of the typical uncertainties expected
+%        for gyrochronology ages.
 \\
-{\bf Contingencies:} If the Gaia DR2 data release is pushed back from April 2018 to early 2019, we will begin our period bimodality analysis with the DR1 ``TGAS'' data to explore the period distribution between K2 fields at distances $\lesssim 1$ kpc.
+{\bf Contingencies:} If the Gaia DR2 data release is pushed back from April 2018 (e.g. to early 2019), we will begin our period bimodality analysis using the DR1 ``TGAS'' data to explore the period distribution between K2 fields at distances $\lesssim 1$ kpc.
+%
 \item {\bf Year 2:} Produce an age map of the K2 sky using the newly developed
 {\tt chronometer} code. extend sample to any additional campaigns released by K2 (C15,16,17)
 Explore the implications of this age map for galactic archaeology.
@@ -745,10 +742,11 @@ Explore the implications of this age map for galactic archaeology.
 {\bf Milestones:} Measure final rotation periods and apply gyrochronology relation to estimate per-star ages. Generate age maps for all fields using {\tt chronometer}.
 \end{itemize}
 
+
+
 \clearpage
 %\pagestyle{empty}
 
 \bibliography{references}
-
 
 \end{document}
