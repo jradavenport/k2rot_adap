@@ -183,10 +183,16 @@ The rate of this angular momentum loss has historically been calibrated using
 main sequence stars at a range of masses in stellar clusters with known ages,
 leading to a useful clock called ``gyrochronology'' \citep{barnes2003}.
 Several gyrochronology model parameterizations exist, each using various age
-benchmarks for calibration \citep[\eg][]{barnes2007, barnes2010, mamajek2008,angus2015, Matt2012, van-saders2013, van-saders2016}.
+benchmarks for calibration \citep[\eg][]{barnes2007, barnes2010, mamajek2008,
+Matt2012, van-saders2013, angus2015, van-saders2016}.
 Nearly all gyrochronology models suffer from lack of constraints at older
 ages; often the Sun is the only benchmark used older than $\sim$1 Gyr since
 accessible nearby open clusters are typically young ($<600$ Myr).
+Two clusters observed during the \Kepler prime mission, NGC 6811 and NGC 6819
+and the Solar age M67 cluster observed by K2 now provide rotation periods at
+intermediate ages (see figure \ref{fig:gyro}).
+These older clusters follow the $P \propto A^{1/2}$ relation between rotation
+period and age, indicated with the dashed line in figure \ref{fig:gyro}.
 
 \begin{figure}[!t]
 \centering
@@ -201,7 +207,7 @@ accessible nearby open clusters are typically young ($<600$ Myr).
 %    rotation period and age for main sequence, Solar-color \Kepler
 %    asteroseismic targets.
     The black point falls below the straight line, indicating that there may
-    be a transition in age-rotation relation at around Solar age.}
+    be a transition in the age-rotation relation at around Solar age.}
 \label{fig:gyro}
 \end{figure}
 
@@ -215,9 +221,9 @@ asteroseismic targets to redefine the gyrochronology models.
 To explain this phenomenon \citet{van-saders2016} invoke a transitioning magnetic dynamo
 behavior at a critical Rossby number, $Ro$\footnote{The Rossby number is the
 ratio of rotation period to convective overturn time.} which they find to be
-$Ro\approx2.7$ (close to the Solar value).
-This transition marks a boundary between efficient magnetic braking (2.7 $<$
-$Ro$) to inefficient braking ($Ro$ $<$ 2.7); stars stop spinning down after
+$Ro\approx2.2$ (close to the Solar value).
+This transition marks a boundary between efficient magnetic braking (2.2 $<$
+$Ro$) to inefficient braking ($Ro$ $<$ 2.2); stars stop spinning down after
 their rotation slows enough to cross this critical threshold.
 {\bf This has extremely important consequences for gyrochronology: can we trust
 ages inferred from rotation for slowly rotating stars like the Sun?}
@@ -226,7 +232,7 @@ Additional calibration sources are desperately needed for stars older than the
 Sun in order to confirm these hints of a changing angular momentum loss rate due to a transitioning magnetic dynamo.
 Asteroseismology also cannot yet provide ages for stars with masses
 much lower than the Sun, leading to an incomplete calibration of the gyrochronology models.
-\citet{douglas2017} used \ktwo observations of the Hyades to demonstrate that
+\citet{douglas2017} used K2 observations of the Hyades to demonstrate that
 gyrochronology may be applicable to stars with masses as low as 0.3 $M_\odot$. While rotation periods of many more low-mass stars are needed to confirm this exciting finding, if confirmed it would be an important result for exoplanet studies,
 which have increased focus on M dwarfs due to the higher signal-to-noise of planet characterization provided by the smaller stellar radii and masses.
 %If it is confirmed that gyrochronology is applicable to these low-mass stars,
@@ -255,7 +261,15 @@ After hardware failures made observations of the original field impossible, an e
 
 
 \clearpage % added to prevent half of first sentence from being on previous page - remove if major edits above!
-{\bf K2 provides the ideal dataset to both extend the \Kepler studies of field star age distributions, and to amass a sample of better calibration sources for gyrochronology models.} The range of K2 field positions within the Galaxy means the sample spans a much wider variety of stellar ages for more distant stars ($\gtrsim$1pc), and provides multiple opportunities to constrain the local star formation history for nearby stars. This makes the gyrochronology study of field stars with K2 an unique and valuable comparison to complimentary efforts in studying galactic archeology using chemical abundances, such as with APOGEE \citep{hayden2014}.
+{\bf K2 provides the ideal dataset to both extend the \Kepler studies of field
+star age distributions, and to amass a sample of better calibration sources
+for gyrochronology models.} The range of K2 field positions within the Galaxy
+means the sample spans a much wider variety of stellar ages for more distant
+stars ($\gtrsim$1pc), and provides multiple opportunities to constrain the
+local star formation history for nearby stars. This makes the gyrochronology
+study of field stars with K2 an unique and valuable data set, complimenting
+galactic archeology surveys which target chemical abundances, such as with
+APOGEE \citep{hayden2014}.
 Producing rotation periods for these older stars and additional open clusters available in the K2 data, including the benchmark Solar-age cluster M67, will also lead to new gyrochronology relations and to test the universality of the age--rotation--activity relation put into question by \citet{angus2015}.
 
 
@@ -303,9 +317,10 @@ data. This will include the nearly 300,000 light curves from Campaigns 0-14.
 
 As part of our study we will assess the available K2 reduction pipelines for their ability to produce reliable rotation periods on long timescales. While most pipelines will provide shorter (few day) rotation periods consistently, the variations in detrending algorithms can produce discrepant periods for slower rotators. This is due to most pipelines being optimized for planet transit searches. We will compare the performance of three pipelines in particular: the
 \citet{Vanderburg2015} light curves, the {\tt everest} \citet{luger2016} light
-curves, and the \ktwosc\ \citet{aigrain2016} light curves. Unlike the other two pipelines, \ktwosc\ light curves are designed to preserve slow stellar variability where possible.
+curves, and the \ktwosc\ \citet{aigrain2016} light curves.
+% Unlike the other two pipelines, \ktwosc\ light curves are designed to preserve slow stellar variability where possible.
 By visually examining the light curves and Lomb-Scargle periodograms for hundreds of targets in each K2 field using each detrending method, we will ascertain
-which pipeline best preserves signal on long timescales. 
+which pipeline best preserves signal on long timescales.
 % The \ktwosc\ pipeline removes instrumental systematics using a non-parametric
 % approach: a Gaussian process is used to model the instrumental systematics,
 % astrophysical variability and white noise in each light curve.
@@ -331,7 +346,10 @@ such a low-pass filtering approach.
 We will use a range of approaches for extracting the most robust rotation period measurements possible for all K2 targets. A combination of Lomb-Scargle and autocorrelation function
 techniques will initially be used to produce a quick-look catalogue for early analysis. These algorithms have been shown to recover approximate rotation periods from both \Kepler and simulated \Kepler-like data \citep{aigrain2015}.
 Although both of these methods are sensitive to noise and can produce spurious
-rotation period measurements, their relative speed will allow us to process the entire K2 database in under a month, to rapidly begin initial analysis of the period bimodality results and continued development of the age mapping codebase.
+rotation period measurements, their relative computational speed will allow us
+to process the entire K2 database in under a month, to rapidly begin initial
+analysis of the period bimodality results and continued development of the age
+mapping codebase.
 
 %Once establishing the best detrending method for preserving stellar
 %variability, we will download all the available light curves and, if
@@ -339,7 +357,7 @@ rotation period measurements, their relative speed will allow us to process the 
 We will also produce and examine periodograms using the
 Systematics-Insensitive Periodogram (SIP) technique \citep{angus2015}.
 This method simultaneously fits light curves with a sinusoid and a noise
-model constructed from 150 principle components derived from a Principle Component Analysis of the entire set of \ktwo\ light curves for each field. 
+model constructed from 150 principle components derived from a Principle Component Analysis of the entire set of \ktwo\ light curves for each field.
 Although developed for asteroseismology, this algorithm may be fruitful for rotation period analysis. At the longer timescales of variation produced by slower stellar rotation, it is likely that the SIP results will suffer from overfitting, and we will revert to the standard Lomb-Scargle periodogram methods. These SIP (or Lomb-Scargle) periods will be used as initial guesses for our final method.
 
 Our final catalog will be determined with a procedure for obtaining accurate and precise
@@ -382,7 +400,7 @@ These rotation periods were measured using a very simple ACF method, applied
 
 
 As a proof-of-concept for extracting periods from field stars with K2, we have implemented an autocorrelation function approach to a sample K2 campaign. The {\tt everest} \citep{luger2016} reduction for every star in the sample field was downloaded, and an autocorrelation function (ACF) was computed for each light curve. We smoothed the ACF's, and used the highest peak as the dominant rotation period for each star.
-Figure \ref{fig:kalesalad} shows stars the positions of stars observed by K2 during C4 with recovered rotation periods. We stress this is a first-look exercise to demonstrate the feasibility of our proposed research and have not removed astrophysical contaminants, e.g. such as binary stars. 
+Figure \ref{fig:kalesalad} shows stars the positions of stars observed by K2 during C4 with recovered rotation periods. We stress this is a first-look exercise to demonstrate the feasibility of our proposed research and have not removed astrophysical contaminants, e.g. such as binary stars.
 
 
 
@@ -459,7 +477,8 @@ This phenomenon is attributed to a transitioning magnetic dynamo at a critical
 Rossby number, $Ro$, of around the solar value \citep{van-saders2016}.
 As rotation periods slow, $Ro$ decreases until it hits this critical value. Magnetic braking then ``switches off'' or becomes much less efficient. The result is older stars maintain nearly constant rotation periods. This feature of rotational evolution, if correct, restricts the applicability
 of gyrochronology to rapidly rotating stars, younger than $\sim$5 Gyr.
-While such a transitioning magnetic dynamo is supported by the existing age measurments, 
+While such a transitioning magnetic dynamo is supported by the existing age
+measurements,
 these data are sparse -- the analyses demonstrating the discrepancies were
 conducted on a small number ($\sim$20) of main sequence, Solar-like oscillators observed
 by Kepler in short cadence mode with detectable rotation periods.
@@ -474,7 +493,7 @@ confirm and further characterize the Rossby saturation mechanism introduced by
 
 {\bf We propose to use the age gradients in the kinematic properties of stars to
 confirm the Rossby saturation effect for older stars in our rotation period sample.}
-It is believed that stars in the Milky Way form in the thin disk, and having relatively small vertical velocities and angular momenta
+It is believed that stars in the Milky Way form in the thin disk, having relatively small vertical velocities and angular momenta
 \citep[\eg][]{carlberg1985, edvardsson1993, freeman2002, bensby2004,
 holmberg2007}.
 These stars are slowly scattered via close encounters with other stars and
@@ -692,7 +711,7 @@ has developed analytical models for rotational modulations in stellar light curv
 
 %%%%%%%%%%%%%%%%%%%
 \section{Relevance to NASA Programs}
-This project will create an important value-added dataset for extending the stellar astrophysics legacy of the \Kepler mission with K2 data. 
+This project will create an important value-added dataset for extending the stellar astrophysics legacy of the \Kepler mission with K2 data.
 Calibrating and extending gyrochronology relations for older stars will be critical for  investigations of the star formation history and origin of the Milky Way. Determining precise stellar ages for exoplanet host stars will be required for targeting key planetary systems with JWST. The detailed age--rotation--magnetic activity paradigm is necessary for understanding the habitability and formation of the young Earth--Sun system. The techniques developed for extracting reliable rotation periods from K2 light curves, and ensemble age mapping from stars with rotation periods measured, will be directly applicable to the data available from the TESS mission.
 
 
@@ -708,10 +727,18 @@ Produce a newly calibrated relation between rotation and age,
 based on the kinematics of \Kepler and K2 stars with Gaia proper motions and
 parallaxes.
 \\
-{\bf Milestones:} initial catalog of rotation periods form Lomb-Scargle and ACF techniques, matched against 
+{\bf Milestones:} initial catalog of rotation periods form Lomb-Scargle and
+        ACF techniques.
+        Establish whether a continuous or transitional gyrochronology model is
+        support by kinematic ages of K2 stars.
+        Infer the intrinsic dispersion in the gyrochronology relations, based
+        on the rotation periods of comoving pairs.
+        This will provide an estimate of the typical uncertainties expected
+        for gyrochronology ages.
+        % matched against
 \\
 {\bf Contingencies:} If the Gaia DR2 data release is pushed back from April 2018 to early 2019, we will begin our period bimodality analysis with the DR1 ``TGAS'' data to explore the period distribution between K2 fields at distances $< 1$ kpc.
-\item {\bf Year 2:} Produce an age map of the K2 sky using the newly developed 
+\item {\bf Year 2:} Produce an age map of the K2 sky using the newly developed
 {\tt chronometer} code. extend sample to any additional campaigns released by K2 (C15,16,17)
 Explore the implications of this age map for galactic archaeology.
 \\
