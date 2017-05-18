@@ -301,17 +301,11 @@ We propose the first systematic study of stellar rotation periods from the K2
 data. This will include the nearly 300,000 light curves from Campaigns 0-14.
 
 
-Part of our study will be to assess the qualities of the various data
-reduction pipelines available for K2 light curves.
-Each detrending algorithm uses a slightly different approach and will almost
-certainly provide light curves that differ enough to produce a number of
-discrepant rotation periods.
-We will compare the performance of three pipelines in particular: the
+As part of our study we will assess the available K2 reduction pipelines for their ability to produce reliable rotation periods on long timescales. While most pipelines will provide shorter (few day) rotation periods consistently, the variations in detrending algorithms can produce discrepant periods for slower rotators. This is due to most pipelines being optimized for planet transit searches. We will compare the performance of three pipelines in particular: the
 \citet{Vanderburg2015} light curves, the {\tt everest} \citet{luger2016} light
-curves, and the \ktwosc\ \citet{aigrain2016} light curves.
-By visually examining the light curves and Lomb-Scargle periodograms of a
-number of targets in common between the detrending methods, we will ascertain
-which pipeline best preserves signal on long timescales.
+curves, and the \ktwosc\ \citet{aigrain2016} light curves. Unlike the other two pipelines, \ktwosc\ light curves are designed to preserve slow stellar variability where possible.
+By visually examining the light curves and Lomb-Scargle periodograms for hundreds of targets in each K2 field using each detrending method, we will ascertain
+which pipeline best preserves signal on long timescales. 
 % The \ktwosc\ pipeline removes instrumental systematics using a non-parametric
 % approach: a Gaussian process is used to model the instrumental systematics,
 % astrophysical variability and white noise in each light curve.
@@ -321,86 +315,64 @@ which pipeline best preserves signal on long timescales.
 % We expect to find that these light curves preserve rotation signals on the
 % longest timescales.
 
-Once establishing the best detrending method for preserving stellar
-variability, we will download all the available light curves and, if
-necessary, run the pipeline on any outstanding targets.
-We will also produce and examine periodograms using the
-systematics-insensitive periodogram (SIP) \citep{angus2015}.
-This method simultaneously fits light curves with a sinusoid and a noise
-model constructed from 150 principle components derived from a PCA of the
-entire set of \ktwo\ light curves for a given campaign.
-Although developed for asteroseismology, this algorithm may also be applicable
-to rotation period analysis, however at the longer timescales of variation
-produced by stellar rotation, it is likely that the results will suffer from
-overfitting and will revert to standard Lomb-Scargle periodogram methods in
-this case.
-
-We will use a combination of Lomb-Scargle and autocorrelation function
-techniques to produce a quick catalogue for early analysis.
-Although both of these methods are sensitive to noise and can produce spurious
-rotation period measurements, there relative speed will allow us to rapidly
-begin initial analysis of the results.
-We will then apply a procedure for obtaining more accurate and precise
-rotation periods using probabilistic inference.
-Co-I Angus recently developed a method for rotation period inference using a
-Gaussian Process (GP) to model the light curve in the time-domain, rather than
-extracting periodic signals in the frequency domain \citet{angus2016c}.
-% Is this IAU reference correct, or do you have a paper?%\citet{Angus2017}.
-This GP method produces slightly more precise and accurate rotation periods
-with more representative uncertainties than Lomb-Scargle and autocorrelation
-methods.
-The disadvantage of this GP regression based method is that it can be
-computationally expensive.
-However, with the recently developed method for fast Gaussian process
-inference, {\tt celerite} \citep{foreman-mackey2017}, even performing MCMC
-with the thousands of data points in a \ktwo\ light curve may only take a few
-minutes.
-The advantage of computing probabilistic rotation periods is that one can
-bypass the need to calculate a rotation period at all and simply infer the
-parameters of stellar populations directly from the light curves themselves.
-In other words, one can perform hierarchical inference more easily.
-This may be a level of sophistication that is above and beyond our science
-goals but it is worth noting that we could take this approach if the data and
-scientific question warranted it.
 
 Wherever possible we will mask out discontinuous astrophysical signals, such as
 eclipsing binaries, planet transit or flares that may distort the rotation
 period signal.
-We will make use of exoplanet and binary catalogs to identify planet transits
+We will make use of exoplanet and stellar binary catalogs to identify planet transits
 and eclipses.
 We will apply the flare detection algorithm {\tt appaloosa}, built by PI
 Davenport, to identify and remove flares.
-It may still be necessary to apply a low-pass filter to the data in order to
-remove high frequency features that we miss.
-Fortunately, most of the stellar rotation signals of interest for this study
-have timescales longer than around a day and will be relatively unaffected by
-a low-pass filtering algorithm.
+We will also experiment with performing a low-pass filtering to the data, with a timescale of a few hours, to remove high frequency features that our data cleaning steps miss.
+Fortunately, the stellar rotation signals of interest for this study
+have timescales longer than around a day, and will therefore be unaffected by
+such a low-pass filtering approach.
 
-% The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield
-% of $\sim25\%$ of stars had measurable rotation periods using the
-% Autocorrelation Function.
-From our sample of nearly 300,000 available K2 targets, we expect to recover
+We will use a range of approaches for extracting the most robust rotation period measurements possible for all K2 targets. A combination of Lomb-Scargle and autocorrelation function
+techniques will initially be used to produce a quick-look catalogue for early analysis. These algorithms have been shown to recover approximate rotation periods from both \Kepler and simulated \Kepler-like data \citep{aigrain2015}.
+Although both of these methods are sensitive to noise and can produce spurious
+rotation period measurements, their relative speed will allow us to process the entire K2 database in under a month, to rapidly begin initial analysis of the period bimodality results and continued development of the age mapping codebase.
+
+%Once establishing the best detrending method for preserving stellar
+%variability, we will download all the available light curves and, if
+%necessary, run the pipeline on any outstanding targets.
+We will also produce and examine periodograms using the
+Systematics-Insensitive Periodogram (SIP) technique \citep{angus2015}.
+This method simultaneously fits light curves with a sinusoid and a noise
+model constructed from 150 principle components derived from a Principle Component Analysis of the entire set of \ktwo\ light curves for each field. 
+Although developed for asteroseismology, this algorithm may be fruitful for rotation period analysis. At the longer timescales of variation produced by slower stellar rotation, it is likely that the SIP results will suffer from overfitting, and we will revert to the standard Lomb-Scargle periodogram methods. These SIP (or Lomb-Scargle) periods will be used as initial guesses for our final method.
+
+Our final catalog will be determined with a procedure for obtaining accurate and precise
+rotation periods using probabilistic inference.
+Co-I Angus recently developed a method for rotation period inference using a
+Gaussian Process (GP) to model the light curve in the time-domain, rather than
+extracting periodic signals in the frequency domain \citet{angus2016c}.
+This GP method produces slightly more precise and accurate rotation periods than Lomb-Scargle and autocorrelation methods, and with more representative period uncertainties.
+The disadvantage of this GP regression based method is a greatly increased computational expense. However, utilizing the recently developed method for fast Gaussian Process
+inference, {\tt celerite} \citep{foreman-mackey2017}, performing MCMC
+with the thousands of data points in each \ktwo\ light curve may only take a few
+minutes per target. By deploying this final technique on the 400-node WWU Compute Cluster (available to PI Davenport) for parallel processing, we should be able to extract periods for the entire K2 dataset in approximately a week of run time.
+
+%The advantage of computing probabilistic rotation periods is that one can
+%bypass the need to calculate a rotation period at all and simply infer the
+%parameters of stellar populations directly from the light curves themselves.
+%In other words, one can perform hierarchical inference more easily.
+%This may be a level of sophistication that is above and beyond our science
+%goals but it is worth noting that we could take this approach if the data and
+%scientific question warranted it.
+
+
+
+ The \Kepler rotation period catalog from \citet{mcquillan2014} found a yield
+ of $\sim25\%$ of field stars had rotation periods using the
+ Autocorrelation Function.
+From the sample of nearly 300,000 available K2 targets, we therefore expect to recover
 over 70,000 new periods, bringing the total \Kepler/K2 sample to $\sim$100,000
 stars with measured rotation periods.
 
-We have already measured a number of K2 rotation periods using a simple
-autocorrelation function approach.
-Figure \ref{fig:kalesalad} shows stars observed by K2 during campaign 4,
-plotted according to their RA and dec and colored by their rotation period.
-To measure the rotation periods shown here we downloaded a
-{\tt everest} \citep{luger2016} light curve for every star and computed an
-autocorrelation function (ACF) of each light curve.
-We smoothed the ACFs and adopted the lag of the highest peak as the dominant
-period in the time series.
-Due to the simplicity of the period extraction technique and the fact that we
-have taken each period measurement at face value with no attempt to remove
-astrophysical contaminants, figure \ref{fig:kalesalad} is a {\it very}
-preliminary look at rotation and other stellar variability in one of the K2
-fields.
-
-\begin{figure}[!th]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=4in]{ra_vs_dec_period_c04.png}
+\includegraphics[width=3in]{ra_vs_dec_period_c04.png}
 \caption{All stars observed during K2 campaign 4, plotted according to their
     equatorial coordinates and colored by their preliminary rotation period.
 These rotation periods were measured using a very simple ACF method, applied
@@ -409,11 +381,20 @@ These rotation periods were measured using a very simple ACF method, applied
 \end{figure}
 
 
+As a proof-of-concept for extracting periods from field stars with K2, we have implemented an autocorrelation function approach to a sample K2 campaign. The {\tt everest} \citep{luger2016} reduction for every star in the sample field was downloaded, and an autocorrelation function (ACF) was computed for each light curve. We smoothed the ACF's, and used the highest peak as the dominant rotation period for each star.
+Figure \ref{fig:kalesalad} shows stars the positions of stars observed by K2 during C4 with recovered rotation periods. We stress this is a first-look exercise to demonstrate the feasibility of our proposed research and have not removed astrophysical contaminants, e.g. such as binary stars. 
+
+
+
 
 
 
 %%%%%%%%%
 \subsection{Exploring the Period Bimodality}
+
+
+To determine which formation mechanism gives rise to the bimodal period distribution seen in the original \Kepler field, we must determine if the feature is only present in nearby stars. However, we must also rule out the unlikely possibility that the bimodality is due to some systematic error in the \Kepler data. Within each K2 campaign we will visually inspect the low-mass stars in the color--period space ($T_{eff}<4500$), as illustrated in Figure \ref{fig:bimodal} for the \citet{mcquillan2013} M dwarf sample. Since these coolest stars are only visible with \Kepler out to a few hundred pc, this will provide a test of the localization of the bimodality, using a small volume-limited sample. This test provides an important reality check against the period bimodality being due to the processing of the original \Kepler data itself. Since this initial nearby sample will probe the same close ($\sim$250 pc) volume as in \citet{mcquillan2013} and \citet{davenport2017}, we expect the period bimodality will appear up in most K2 fields for the M dwarfs centered around $P_{rot}=20$ days.
+
 
 \begin{figure}[!th]
 \centering
@@ -425,11 +406,7 @@ These rotation periods were measured using a very simple ACF method, applied
 \label{fig:cmd}
 \end{figure}
 
-To determine which formation mechanism gives rise to the bimodal period distribution seen in the original \Kepler field, we must determine if the feature is only present in nearby stars. However, we must also rule out the unlikely possibility that the bimodality is due to some systematic error in the \Kepler data. Within each K2 campaign we will visually inspect the low-mass stars in the color--period space ($T_{eff}<4500$), as illustrated in Figure \ref{fig:bimodal} for the \citet{mcquillan2013} M dwarf sample. Since these coolest stars are only visible with \Kepler out to a few hundred pc, this will provide a test of the localization of the bimodality, using a small volume-limited sample. This test provides an important reality check against the period bimodality being due to the processing of the original \Kepler data itself. Since this initial nearby sample will probe the same close ($\sim$250 pc) volume as in \citet{mcquillan2013} and \citet{davenport2017}, we expect the period bimodality will appear up in most K2 fields for the M dwarfs centered around $P_{rot}=20$ days.
-
-
-
-{\bf To reliably map the rotation period distribution as a function of distance we will match our final sample of K2 stars, and the original \Kepler rotation sample, to the upcoming data release from the Gaia mission} \citep{perryman2001}. With accurate parallaxes from Gaia for all \Kepler and K2 sources we will also be able to filter out subgiants and binary stars from our sample, leaving only main sequence stars. As \citet{davenport2017} showed, G dwarfs can only be used to detect the period bimodality if subgiants and binaries are filtered out.\citet{davenport2017} was able to do this for the \Kepler rotation period sample using the Gaia DR1 ``TGAS'' release that included astrometric data for nearby stars \citep{gaia_dr1}, as shown in Figure \ref{fig:cmd}. This reduced the \citet{mcquillan2014} rotation period sample of 33,000 sources down to the 440 brightest main sequence stars within $\sim$300 pc, roughly the same distance limit reached by the M dwarf-only sample. Studying the period distribution for G dwarfs is critical for including stars at further distances, and therefore sampling different star formation histories. {\bf With the April 2018 data release from Gaia we will be able to study rotation periods for G dwarfs in \Kepler and K2 out to $\sim$3 kpc.}
+{\bf To reliably map the rotation period distribution as a function of distance we will match our final sample of K2 stars, and the original \Kepler rotation sample, to the upcoming data release from the Gaia mission} \citep{perryman2001}. With accurate parallaxes from Gaia for all \Kepler and K2 sources we will also be able to filter out subgiants and binary stars from our sample, leaving only main sequence stars. As \citet{davenport2017} showed, G dwarfs can only be used to detect the period bimodality if subgiants and binaries are filtered out.\citet{davenport2017} was able to do this for the \Kepler rotation period sample using the Gaia DR1 ``TGAS'' release that included astrometric data for nearby stars \citep{gaia_dr1}, as shown in Figure \ref{fig:cmd}. This reduced the \citet{mcquillan2014} rotation period sample of 33,000 sources down to the 440 brightest main sequence stars within $\sim$300 pc, roughly the same distance limit reached by the M dwarf-only sample. Studying the period distribution for G dwarfs is critical for including stars at further distances, and therefore sampling different star formation histories. {\bf With the April 2018 data release from Gaia (DR2) we will be able to study rotation periods for G dwarfs in \Kepler and K2 out to $\sim$3 kpc.}
 
 
 %JIM SAYS:  I hesitate to go here, b/c we open door to needing to determine kinematic ages, which will be a big fruitful and cool thing, but I don't want to personally do it if we don't have to...
@@ -464,11 +441,11 @@ different star formation histories. %Other period bimodalities may be present
 %%%%%%%%%
 \subsection{Mapping Ages in each Field}
 
-Combining our catalog of rotation periods from K2 with the existing rotation
-catalogs from Kepler will produce the largest set of rotation periods
-currently available.
-Using gyrochronology and other dating methods, we may be able to transform
-these rotation periods into ages.
+%Combining our catalog of rotation periods from K2 with the existing rotation
+%catalogs from Kepler will produce the largest set of rotation periods
+%currently available.
+%Using gyrochronology and other dating methods, we may be able to transform
+%these rotation periods into ages.
 
 % Using a new technique being developed by CoI Angus, we will produce an
 % improved age estimate for every star based on rotation values, photometric
@@ -476,50 +453,46 @@ these rotation periods into ages.
 % This age map may be used to infer the age distribution of stars within and
 % across K2 fields.
 
-As discussed above, the performance of the age-rotation relations for old
+The performance of the age-rotation relations for old
 stars has been called into question in the last few years
 \citep{angus2015,van-saders2016, Metcalfe2016}.
-A simple straight-line model for rotational age does not reproduce the ages
+Simple linear evolution for rotational age does not accurately reproduce the ages
 predicted by asteroseismology for stars older than the Sun.
 This phenomenon is attributed to a transitioning magnetic dynamo at a critical
 Rossby number, $Ro$, of around the solar value \citep{van-saders2016}.
-As rotation periods slow, $Ro$ decreases until it hits the critical value and
-magnetic braking switches off: stars maintain their rotation period from that
-point onward.
-This feature of rotational evolution, if accurate, restricts the applicability
-of gyrochronology to young, rapidly rotating stars.
-A transitioning magnetic dynamo is supported by the existing data, however
-these data are sparse~---~the analyses demonstrating the discrepancies were
-conducted on a small number of main sequence, Solar-like oscillators observed
-by Kepler in short cadence mode with detectable rotation periods: a sample
-size of around 20.
+As rotation periods slow, $Ro$ decreases until it hits this critical value. Magnetic braking then ``switches off'' or becomes much less efficient. The result is older stars maintain nearly constant rotation periods. This feature of rotational evolution, if correct, restricts the applicability
+of gyrochronology to rapidly rotating stars, younger than $\sim$5 Gyr.
+While such a transitioning magnetic dynamo is supported by the existing age measurments, 
+these data are sparse -- the analyses demonstrating the discrepancies were
+conducted on a small number ($\sim$20) of main sequence, Solar-like oscillators observed
+by Kepler in short cadence mode with detectable rotation periods.
 % Furthermore, asteroseismology favors stars with low surface gravities since
 % they show the largest amplitudes of oscillation and the majority of stars in
 % this sample were slightly evolved.
 A larger sample of old main sequence stars with precise ages is required to
 confirm and further characterize the Rossby saturation mechanism introduced by
 \citep{van-saders2016}.
-However, old main sequence stars are difficult to age-date with any other
-method than asteroseismology.
-We propose use the age gradients in the kinematic properties of stars to
-confirm the Rossby saturation effect.
+%However, old main sequence stars are difficult to age-date with any other
+%method than asteroseismology.
 
-There is evidence to suggest that stars in the Milky Way form in the thin disc
-of the galaxy with relatively small vertical velocities and angular momenta
+{\bf We propose to use the age gradients in the kinematic properties of stars to
+confirm the Rossby saturation effect for older stars in our rotation period sample.}
+It is believed that stars in the Milky Way form in the thin disk, and having relatively small vertical velocities and angular momenta
 \citep[\eg][]{carlberg1985, edvardsson1993, freeman2002, bensby2004,
 holmberg2007}.
 These stars are slowly scattered via close encounters with other stars and
-interactions with galactic spiral arms.
-The more time passes, the more scattering events take place, and stars slowly
-accumulate displacement and angular momentum in the z-direction, out of the
-plane of the Milky Way.
-Older stars can be identified in Gaia DR1 by integrating their orbits in the
+interactions with spiral arms.
+These scattering events are cumulative over time, and stars slowly
+increase their displacement and angular momentum in the z-direction (out of the
+plane) of the Milky Way.
+Older stars can therefore be identified in Gaia by integrating their orbits in the
 potential of the Milky Way to convert their proper motions, positions and
 parallaxes into vertical angular momenta, or actions.
 The {\it dispersion} in vertical action for groups of stars reliably traces
 age: an old population will have a larger dispersion in vertical action than a
-young population.
-Since most \Kepler\ and K2 stars will have positions, parallaxes and proper
+young population. Such an approach has been used in the past for ensemble ages studies using very coarse kinematic data, e.g. to roughly trace the ages of nearby M dwarfs \citep{bochanski_gal}.
+
+Since nearly all \Kepler\ and K2 stars will have precise positions, parallaxes and proper
 motions measured by Gaia, we can calculate the vertical action dispersion for
 groups of stars with various rotational properties.
 Rapid rotators (young stars) should have smaller vertical action dispersions
@@ -528,65 +501,65 @@ We will calculate gyrochronological ages for all F, G and K dwarfs with
 rotation periods and test these ages against their predicted kinematic ages.
 In this way we will test the gyrochronology relations and, in particular,
 confirm whether rotation continues to be a good age proxy at late ages, \ie\
-does the \citet{barnes2003} model or a \citet{van-saders2016} model provide a
+does the \citet{barnes2003} or \citet{van-saders2016} model provide a
 better description of the data?
-{\bf We propose to use the relationship between vertical action and age to
-test the gyrochronology relations at late ages.}
 
-The intersection between Gaia and \Kepler/K2 rotators provides another test of
-the age-rotation relations.
+The intersection between Gaia and \Kepler/K2 rotators provides another powerful test of age-rotation relations.
 Over 13,000 comoving pairs of stars were identified in the first Gaia data
 release by \citet{Oh2016}.
 Several hundred of these pairs fall in the \Kepler/K2 footprint.
-If these comoving stars are coeval, their rotation periods should predict the
-same gyrochronological age.
+If these comoving stars are coeval ``wide binary'' systems, their rotation periods should predict the same gyrochronological age.
 The dispersion in rotational-age, predicted from the rotation periods of
-coeval groups of stars will reveal the fundamental uncertainty in the
-gyrochronology relations.
-We have secured 5 nights on the ModSpec spectrograph on the Hiltner 2.4m
-telescope at MDM observatory, to obtain radial velocities for the comoving
-pair candidates in the \Kepler\ field.
-A previous observing run established that around 80\% of the \citet{Oh2016}
-comoving pairs, identified from 2-dimensional proper motions, have radial
-velocities consistent with being comoving.
-We expect to find this same low false-positive rate for the comoving pair
-candidates in the \Kepler\ field.
+coeval groups of stars may reveal the fundamental uncertainty in the
+gyrochronology relations. However, explorations of rotating stars in a handful of wide binary systems in the original \Kepler field by \citet{janes2016} found several with highly discrepant ages. With our improved sample of rotation periods from K2 we will be able to test if these comoving, wide binary systems are valid benchmarks for gyrochronology.
+%We have secured 5 nights on the ModSpec spectrograph on the Hiltner 2.4m
+%telescope at MDM observatory, to obtain radial velocities for the comoving
+%pair candidates in the \Kepler\ field.
+%Previous observing of these systems by Co-I Angus established that around 80\% of the \citet{Oh2016} proper motions pairs have radial
+%velocities consistent with being truly comoving in space.
+%We expect to find this same low false-positive rate for the comoving pair
+%candidates in the \Kepler\ field.
 
-Having established whether the \citet{barnes2003} or \citet{van-saders2016}
-model is more appropriate for describing the rotational evolution of stars, we
-will apply a new dating method (called {\tt chronometer}) that combines
-multiple age indicators in order to produce an age map of the K2 sky.
-{\tt chronometer} extends isochrone fitting by simultaneously fitting an
-age-rotation relation and a age-velocity dispersion relation to stars with
-photometric colors, rotation periods and Gaia proper motions.
-It combines the information available from these three dating techniques, thus
-providing more accurate ages than any one of the techniques alone.
-Figure \ref{fig:chrono} demonstrates how combining multiple dating methods can
-improve both the precision and accuracy of an age measurement.
-% {\tt chronometer} combines gyrochronology, stellar evolutionary tracks,
-% asteroseismology and galactic kinematics by jointly inferring the parameters
-% of the three different models.
 
-\begin{figure}[!ht]
+\begin{figure}[!t]
 \centering
 \includegraphics[width=4in]{all_hist_working.png}
-\caption{A preliminary demonstration of the power of rotation for age
+\caption{A demonstration of the power of rotation for age
     inference, created using {\tt chronometer}.
-    The palest gray histogram shows the probability distribution over ages
+    The palest  histogram shows the probability distribution over ages
     obtained for the Sun at 10 parsecs using only J, H and K band colors.
     The darker gray histogram shows the age posterior for the Sun at 10
     parsecs using colors and spectroscopic information ($T_{\mathrm{eff}}$,
     $\log(g)$ and $[Fe/H]$).
     The darkest gray histogram shows the age posterior when colors,
-    spectroscopic information and a rotation period used to infer the age of
-    the Sun at 10 parsecs.
-    This is a preliminary plot with no kinematic information and just three
-    stars.
-    The final model will contain several thousand stars and kinematic
-    information so will be even more powerful than this.
+    spectroscopic information and rotation period are simultaneously used to infer the age of
+    the Sun at 10 parsecs, with the true age for comparison (blue line).
+    This is a preliminary result for a small number of stars, and with no kinematic information included.
 }
 \label{fig:chrono}
 \end{figure}
+
+
+%Having established whether the \citet{barnes2003} or \citet{van-saders2016}
+%model is more appropriate for describing the rotational evolution of stars, we
+
+With improved gyrochronology relations in hand, we
+will apply a new dating method (called {\tt chronometer}) that combines
+multiple age indicators in order to produce an age map of the K2 sky.
+{\tt chronometer} extends isochrone fitting by simultaneously fitting an
+age-rotation relation and an age-velocity dispersion relation to stars with
+photometric colors, rotation periods and Gaia proper motions.
+It combines the information available from each of these three dating techniques, thus
+providing more accurate ages than any one of the techniques alone.
+Figure \ref{fig:chrono} demonstrates how combining multiple dating methods can
+improve both the precision and accuracy of an age measurement.
+{\tt chronometer} is currently in development, lead by Co-I Angus.
+
+% {\tt chronometer} combines gyrochronology, stellar evolutionary tracks,
+% asteroseismology and galactic kinematics by jointly inferring the parameters
+% of the three different models.
+
+
 
 % The unique aspect of our analysis is to combine inference over ages with
 % calibration of the free parameters in the gyrochronology and vertical
